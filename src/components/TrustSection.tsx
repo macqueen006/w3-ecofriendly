@@ -29,7 +29,7 @@ const TrustSection = () => {
                 <div className="flex flex-col items-center gap-6 justify-center max-w-[946px] mx-auto">
                     <div
                         className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
-                        <img src="sparkle-white.png" width="24" height="24" alt=""/>
+                        <img src="/img/sparkle-white.png" width="24" height="24" alt=""/>
                         <p>Why Organization Trust W3 Eco friendly</p>
                     </div>
                     <div className="text-[40px] medium leading-[60px] text-center">
@@ -98,7 +98,7 @@ const TrustSection = () => {
                         </div>
                     </div>
                     <div className="flex-1 w-full relative min-h-[374px]">
-                        <img src="generated-5.png" alt=""
+                        <img src="/img/generated-5.png" alt=""
                              loading="lazy" decoding="async" width="400" height="374"
                              className="object-cover absolute left-0 top-0 w-full h-full rounded-sm"/>
                     </div>

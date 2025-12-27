@@ -32,7 +32,7 @@ export default function Testimonial() {
                     <header className="flex flex-col items-center gap-4 justify-center max-w-[964px] mx-auto">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="48" height="48" className="sm:w-6 sm:h-6" alt="sparkle" src="/sparkle.png"/>
+                            <img width="48" height="48" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.png"/>
                             <p className="text-sm sm:text-base font-medium">FAQS</p>
                         </div>
                         <div className="text-gray-800 text-xl sm:text-2xl md:text-3xl md:leading-normal font-medium ">
@@ -45,7 +45,7 @@ export default function Testimonial() {
                         <div className="h-80 w-80 md:h-96 md:w-96 relative mx-auto flex justify-center items-center">
                             <div className="absolute inset-0">
                                 <img
-                                    src="/testimonial-img.png"
+                                    src="/img/testimonial-img.png"
                                     className="inline-block w-full h-full object-cover"
                                     style={{ transform: 'translateX(-13%)' }}
                                     alt=""

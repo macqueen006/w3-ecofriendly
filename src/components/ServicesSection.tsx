@@ -59,7 +59,7 @@ export default function ServicesSection() {
                 {/* Header */}
                 <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-[946px] mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                        <img src="sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                        <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">Our Services</p>
                     </div>
                     <h2 className="text-xl font-medium leading-tight text-center px-4">

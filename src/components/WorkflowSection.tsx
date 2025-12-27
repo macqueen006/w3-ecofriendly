@@ -4,25 +4,25 @@ export default function WorkflowSection() {
         {
             title: "Pickup Request",
             description: "Submit a request and our team will arrive at your facility for secure collection.",
-            image: "regenerated-1.png",
+            image: "/img/regenerated-1.png",
             imagePosition: "right"
         },
         {
             title: "Scheduling & Allocation",
             description: "Pickups and audits are scheduled through our digital system for optimized routing and compliance tracking.",
-            image: "regenerated-2.png",
+            image: "/img/regenerated-2.png",
             imagePosition: "left"
         },
         {
             title: "Processing & Recycling",
             description: "Devices are processed at our certified facilities with environmental and safety protocols in place.",
-            image: "regenerated-3.png",
+            image: "/img/regenerated-3.png",
             imagePosition: "right"
         },
         {
             title: "Certification & Reporting",
             description: "Clients receive official TraceWaste recycling certificates and downstream compliance documentation.",
-            image: "regenerated-4.png",
+            image: "/img/regenerated-4.png",
             imagePosition: "left"
         }
     ];
@@ -33,7 +33,7 @@ export default function WorkflowSection() {
                 {/* Header Text */}
                 <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-3xl mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                        <img src="sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                        <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">How it Works</p>
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-medium leading-tight text-center px-4">

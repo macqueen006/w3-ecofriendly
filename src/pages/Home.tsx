@@ -10,29 +10,40 @@ import FAQSection from "../components/FAQSection.tsx";
 import CTASection from "../components/CtaSection.tsx";
 import Newsletter from "../components/Newsletter.tsx";
 import Footer from "../components/layout/Footer.tsx";
+import SEO from "../components/SEO.tsx";
+import {OrganizationSchema} from "../components/StructuredData.tsx";
 
 const Home = () => {
     return (
         <>
+            <SEO
+                title="Home - Nigeria's leading e-waste management company"
+                description="W3 Eco-friendly Ltd - Nigeria's leading e-waste management company. Secure electronic waste collection, certified recycling, data destruction, and refurbished technology solutions."
+                keywords="e-waste management Nigeria, electronic waste recycling Lagos, data destruction services, certified e-waste disposal, refurbished electronics Nigeria, LASEPA approved recycling"
+                url="/"
+                image="https://w3eco-friendly.com/hero.png"
+            />
+            <OrganizationSchema/>
+
             <Header/>
             {/* Hero section */}
-            <HeroSection />
+            <HeroSection/>
             {/* Partners */}
-            <PartnersSection />
+            <PartnersSection/>
             {/* Our Services */}
-            <ServicesSection />
+            <ServicesSection/>
             {/* Documentation */}
-            <WorkflowSection />
+            <WorkflowSection/>
             {/* Products */}
-            <ProductSection />
+            <ProductSection/>
             {/* Organization */}
-            <TrustSection />
+            <TrustSection/>
             {/* Testimonials */}
-            <Testimonial />
+            <Testimonial/>
             {/* FAQ */}
-            <FAQSection />
+            <FAQSection/>
             {/* CTA */}
-            <CTASection />
+            <CTASection/>
             {/* Newsletter */}
             <Newsletter/>
             {/* Footer */}
