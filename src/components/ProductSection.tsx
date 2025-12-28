@@ -34,8 +34,8 @@ export default function ProductSection() {
                             <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6"/>
                             <p className="text-sm sm:text-base">Refurbished Technology</p>
                         </div>
-                        <h2 className="text-2xl font-medium leading-tight sm:leading-snug text-center px-4">
-                            Enterprise-Grade Refurbished Devices for <br/> Sustainable IT Procurement
+                        <h2 className="text-base sm:text-2xl font-medium leading-tight sm:leading-snug text-center px-4">
+                            Enterprise-Grade Refurbished Devices for Sustainable IT Procurement
                         </h2>
                     </div>
                 </div>

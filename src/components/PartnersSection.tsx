@@ -1,9 +1,9 @@
 export default function PartnersSection() {
     const partners = [
         {
-            name: "MTN Nigeria",
-            logo: "/img/mtn.png",
-            alt: "MTN Nigeria - Trusted e-waste management partner"
+            name: "LAWMA",
+            logo: "/img/lawma.png",
+            alt: "LAWMA- Trusted e-waste management partner"
         },
         {
             name: "LASEPA",
@@ -29,10 +29,7 @@ export default function PartnersSection() {
         >
             <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto space-y-4">
                 {/* Header */}
-                <h2
-                    id="partners-heading"
-                    className="text-neutral-400 text-center text-xl sm:text-2xl lg:text-3xl font-medium"
-                >
+                <h2 id="partners-heading" className="text-neutral-400 text-center text-xl sm:text-2xl lg:text-3xl font-medium">
                     Regulatory Partners & Certifications
                 </h2>
 
@@ -43,10 +40,9 @@ export default function PartnersSection() {
                     aria-label="List of regulatory partners and certifications"
                 >
                     {partners.map((partner, index) => (
-                        <div
-                            key={index}
+                        <div key={index}
                             role="listitem"
-                            className="flex justify-center sm:justify-start items-center gap-3 md:gap-[14px] p-4 rounded-lg hover:bg-white/50 transition-colors duration-200"
+                            className="flex justify-start items-center gap-3 md:gap-[14px] p-4 rounded-lg hover:bg-white/50 transition-colors duration-200"
                         >
                             <img
                                 src={partner.logo}
@@ -54,7 +50,7 @@ export default function PartnersSection() {
                                 height="36"
                                 alt={partner.alt}
                                 loading="lazy"
-                                className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex-shrink-0 object-contain"
+                                className={`w-8 h-8 sm:w-9 sm:h-9 ${partner.name === 'LAWMA' ? 'md:w-[100px]' : 'md:w-10'} md:h-10 flex-shrink-0 object-contain`}
                             />
                             <p className="text-sm sm:text-base font-medium text-neutral-700 text-center sm:text-left">
                                 {partner.name}

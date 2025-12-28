@@ -27,12 +27,11 @@ const TrustSection = () => {
         <section className="py-[51px] bg-[#051C12] text-white">
             <div className="max-w-[1252px] mx-auto space-y-[62px]">
                 <div className="flex flex-col items-center gap-6 justify-center max-w-[946px] mx-auto">
-                    <div
-                        className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
+                    <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
                         <img src="/img/sparkle-white.png" width="24" height="24" alt=""/>
-                        <p>Why Organization Trust W3 Eco friendly</p>
+                        <p className="text-sm sm:text-base">Why Trust W3 Eco friendly</p>
                     </div>
-                    <div className="text-[40px] medium leading-[60px] text-center">
+                    <div className="text-xl sm:text-2xl lg:3xl medium text-center">
                         Secure. Compliant. Transparent. <br/> Technology-Enabled.
                     </div>
                 </div>

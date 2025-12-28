@@ -37,10 +37,10 @@ const FAQSection = () => {
                     {/* Header */}
                     <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 justify-center max-w-4xl mx-auto">
                         <div className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="24" height="24" alt="" src="sparkle.png"/>
+                            <img width="24" height="24" alt="" src="/img/sparkle.png"/>
                             <p className="text-sm sm:text-base font-medium">FAQS</p>
                         </div>
-                        <h2 className="text-2xl font-bold md:text-3xl md:leading-tight max-w-2xl mx-auto text-gray-900 text-center">
+                        <h2 className="text-base sm:text-2xl font-bold md:leading-tight max-w-2xl mx-auto text-gray-900 text-center">
                             Find quick answers to the most common questions about our services.
                         </h2>
                     </div>

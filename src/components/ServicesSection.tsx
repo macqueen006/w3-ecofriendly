@@ -62,8 +62,8 @@ export default function ServicesSection() {
                         <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">Our Services</p>
                     </div>
-                    <h2 className="text-xl font-medium leading-tight text-center px-4">
-                        Comprehensive, Compliant, and Technology-Driven E-Waste <br/> Management Solutions
+                    <h2 className="text-lg sm:text-xl font-medium leading-tight sm:max-w-xl text-center px-4">
+                        Comprehensive, Compliant, and Technology-Driven E-Waste Management Solutions
                     </h2>
                 </div>
 

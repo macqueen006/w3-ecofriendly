@@ -36,7 +36,7 @@ export default function WorkflowSection() {
                         <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">How it Works</p>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-medium leading-tight text-center px-4">
+                    <h2 className="text-xl sm:text-2xl font-medium leading-tight text-center px-4">
                         A Secure, Traceable, and Fully Documented Workflow
                     </h2>
                 </div>
@@ -45,10 +45,10 @@ export default function WorkflowSection() {
                 <div className="space-y-10 relative">
                     <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none h-full">
                     <svg width="414" height="1126" viewBox="0 0 414 1645" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M179.329 59C272.317 93.1843 56.0029 428.316 148.99 462.5" stroke="#00CCA1" stroke-width="1.81092" stroke-dasharray="5.26 5.26"/>
-                            <path d="M126.984 502C211.761 547.318 84.7767 778.673 169.553 823.991" stroke="#00CCA1" stroke-width="1.93012" stroke-dasharray="5.6 5.6"/>
-                            <path d="M173.667 864C262.272 911.365 115.617 1178.56 204.222 1225.92" stroke="#00CCA1" stroke-width="2.18299" stroke-dasharray="6.34 6.34"/>
-                            <path d="M197.984 1233C305.944 1290.71 144.235 1585.33 252.194 1643.04" stroke="#00CCA1" stroke-width="2.45794" stroke-dasharray="7.14 7.14"/>
+                            <path d="M179.329 59C272.317 93.1843 56.0029 428.316 148.99 462.5" stroke="#00CCA1" strokeWidth="1.81092" strokeDasharray="5.26 5.26"/>
+                            <path d="M126.984 502C211.761 547.318 84.7767 778.673 169.553 823.991" stroke="#00CCA1" strokeWidth="1.93012" strokeDasharray="5.6 5.6"/>
+                            <path d="M173.667 864C262.272 911.365 115.617 1178.56 204.222 1225.92" stroke="#00CCA1" strokeWidth="2.18299" strokeDasharray="6.34 6.34"/>
+                            <path d="M197.984 1233C305.944 1290.71 144.235 1585.33 252.194 1643.04" stroke="#00CCA1" strokeWidth="2.45794" strokeDasharray="7.14 7.14"/>
                             <rect x="158" width="65" height="67.6667" rx="32.5" fill="white"/>
                             <path d="M191.705 43.8335V24.8448H191.219L187.731 32.0035H184.364L189.066 22.6002H194.89V43.8335H191.705Z" fill="black"/>
                             <rect x="99" y="419" width="65" height="67.6667" rx="32.5" fill="white"/>

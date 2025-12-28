@@ -32,8 +32,8 @@ export default function Testimonial() {
                     <header className="flex flex-col items-center gap-4 justify-center max-w-[964px] mx-auto">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="48" height="48" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.png"/>
-                            <p className="text-sm sm:text-base font-medium">FAQS</p>
+                            <img width="24" height="24" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.png"/>
+                            <p className="text-sm sm:text-base font-medium capitalize">testimonials</p>
                         </div>
                         <div className="text-gray-800 text-xl sm:text-2xl md:text-3xl md:leading-normal font-medium ">
                             Read What Our users say about Us
