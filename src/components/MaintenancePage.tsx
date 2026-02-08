@@ -122,7 +122,7 @@ export const MaintenancePage = () => {
                     <p className="text-sm text-gray-500">
                         Need immediate assistance?{' '}
 
-                        <a href="mailto:support@yourcompany.com" className="font-medium text-green-600 hover:text-green-500 transition-colors">
+                        <a href="mailto:info@w3eco-friendly.com.ng" className="font-medium text-green-600 hover:text-green-500 transition-colors">
                             Contact support
                         </a>
                     </p>
