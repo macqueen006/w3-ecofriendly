@@ -36,7 +36,7 @@ function App() {
     }, []);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     if (isMaintenanceMode) {

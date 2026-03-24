@@ -1,38 +1,15 @@
 
 const TrustSection = () => {
-   /* const features = [
-        {
-            title: "Hassle-Free Pickup",
-            description: "We make recycling easy with simple scheduling, fast collection, and smooth processing.",
-            position: "left"
-        },
-        {
-            title: "Regulatory-Aligned Operations",
-            description: "All activities follow LASEPA, NESREA, and Federal Ministry of Environment standards.",
-            position: "left"
-        },
-        {
-            title: "Secure Data Destruction",
-            description: "Your personal and business data is safely wiped using industry-standard destruction methods.",
-            position: "right"
-        },
-        {
-            title: "Enterprise Data Security",
-            description: "We use certified data destruction methods aligned with international cybersecurity compliance frameworks.",
-            position: "right"
-        }
-    ];
-*/
     return (
         <section className="py-[51px] bg-[#051C12] text-white">
             <div className="max-w-[1252px] mx-auto space-y-[62px]">
                 <div className="flex flex-col items-center gap-6 justify-center max-w-[946px] mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
-                        <img src="/img/sparkle-white.png" width="24" height="24" alt=""/>
+                        <img src="/img/sparkle-white.avif" width="24" height="24" alt=""/>
                         <p className="text-sm sm:text-base">Why Trust W3 Eco friendly</p>
                     </div>
                     <div className="text-xl sm:text-2xl lg:3xl medium text-center">
-                        Secure. Compliant. Transparent. <br/> Technology-Enabled.
+                        Built for Compliance. Designed for <br/>Accountability.
                     </div>
                 </div>
                 {/* Organization block */}
@@ -62,10 +39,9 @@ const TrustSection = () => {
                                                     strokeLinejoin="round"/>
                                             </svg>
                                         </div>
-                                        <h4 className="text-body">Hassle-Free Pickup</h4>
+                                        <h4 className="text-body">Structured & Secure Logistics</h4>
                                         <p className="text-body/70 text-center">
-                                            We make recycling easy with simple scheduling, fast collection, and
-                                            smooth processing.
+                                            We operate scheduled, documented, and controlled logistics processes designed to meet enterprise.
                                         </p>
                                     </div>
                                 </div>
@@ -88,8 +64,7 @@ const TrustSection = () => {
                                         </div>
                                         <h4 className="text-body">Regulatory-Aligned Operations</h4>
                                         <p className="text-body/70 text-center">
-                                            All activities follow LASEPA, NESREA, and Federal Ministry of
-                                            Environment standards.
+                                            Our operations are aligned with applicable environmental guidelines.
                                         </p>
                                     </div>
                                 </div>
@@ -97,7 +72,7 @@ const TrustSection = () => {
                         </div>
                     </div>
                     <div className="flex-1 w-full relative min-h-[374px]">
-                        <img src="/img/generated-5.png" alt=""
+                        <img src="/img/generated-5.avif" alt=""
                              loading="lazy" decoding="async" width="400" height="374"
                              className="object-cover absolute left-0 top-0 w-full h-full rounded-sm"/>
                     </div>
@@ -116,8 +91,7 @@ const TrustSection = () => {
                                         </div>
                                         <h4 className="text-body">Secure Data Destruction</h4>
                                         <p className="text-body/70 text-center">
-                                            Your personal and business data is safely wiped using industry-standard
-                                            destruction methods.
+                                            Sensitive personal and enterprise data is securely sanitized using controlled data destruction processes aligned with recognized information security practices.
                                         </p>
                                     </div>
                                 </div>

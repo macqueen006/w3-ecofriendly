@@ -11,7 +11,7 @@ const W3Ecotech = () => {
                 description="W3 EcoTech provides innovative technology solutions for e-waste management: TraceWaste tracking, surveillance portal, API integration, and metal services. Building the digital future of waste management and circular economy."
                 keywords="e-waste management technology, digital waste tracking, recycling technology, TraceWaste, waste surveillance, circular economy platform, environmental technology, API waste management, metal recovery services"
                 url="/w3-ecotech"
-                image="https://w3eco-friendly.com/hero-main.png"
+                image="https://w3eco-friendly.com/hero-main.avif"
             />
             <W3EcotechSchema />
 
@@ -19,7 +19,7 @@ const W3Ecotech = () => {
 
             <main id="main-content">
                 <section
-                    className="pt-24 bg-[url('/img/hero-main.png')] min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat"
+                    className="pt-24 bg-[url('/img/hero-main.avif')] min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat"
                     aria-labelledby="hero-heading"
                 >
                     <div className="max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 relative flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
@@ -31,8 +31,7 @@ const W3Ecotech = () => {
                                 Building a Sustainable <br className="hidden sm:block"/> Future
                             </h1>
                             <p className="text-white text-base sm:text-lg max-w-xl">
-                                W3 EcoTech is an environmental technology company building the digital future of waste
-                                management, recycling, and circular-economy innovation.
+                                W3 EcoTech develops technology platforms that enable traceability, compliance monitoring, the waste management across Nigeria and emerging markets.
                             </p>
                             <nav className="flex flex-col justify-start items-center gap-2 sm:flex-row sm:gap-4" aria-label="Primary actions">
                                 <a
@@ -82,7 +81,7 @@ const W3Ecotech = () => {
                                         <div className="flex items-center -space-x-2">
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
-                                                src="/img/profile-sm-1.png"
+                                                src="/img/client-1.avif"
                                                 alt="Client profile 1"
                                                 width="28"
                                                 height="28"
@@ -90,7 +89,7 @@ const W3Ecotech = () => {
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
-                                                src="/img/profile-sm-2.png"
+                                                src="/img/client-2.avif"
                                                 alt="Client profile 2"
                                                 width="28"
                                                 height="28"
@@ -98,7 +97,7 @@ const W3Ecotech = () => {
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
-                                                src="/img/profile-sm-3.png"
+                                                src="/img/client-3.avif"
                                                 alt="Client profile 3"
                                                 width="28"
                                                 height="28"
@@ -106,7 +105,7 @@ const W3Ecotech = () => {
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
-                                                src="/img/profile-sm-4.png"
+                                                src="/img/client-4.avif"
                                                 alt="Client profile 4"
                                                 width="28"
                                                 height="28"
@@ -133,7 +132,7 @@ const W3Ecotech = () => {
                                     height="24"
                                     alt=""
                                     className="w-5 h-5 md:w-6 md:h-6"
-                                    src="/img/sparkle-white.png"
+                                    src="/img/sparkle-white.avif"
                                     aria-hidden="true"
                                     loading="lazy"
                                 />
@@ -148,7 +147,7 @@ const W3Ecotech = () => {
                             <figure className="max-w-[440px] mx-auto h-64 sm:h-80 md:h-96 relative">
                                 <div className="w-full h-full relative rounded-lg overflow-hidden">
                                     <img
-                                        src="/img/hd-image.png"
+                                        src="/img/hd-image.avif"
                                         className="absolute w-full h-full object-cover object-center inset-0"
                                         alt="W3 EcoTech digital waste management platform interface"
                                         width="440"
@@ -162,21 +161,17 @@ const W3Ecotech = () => {
                                 <div className="w-full max-w-2xl mx-auto h-full relative space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
                                     <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-6">
                                         <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px] h-fit">
-                                            W3 EcoTech is an environmental technology company building the digital
+                                            W3 EcoTech is an environmental technology company building secure digital
                                             infrastructure for waste management, recycling, and circular-economy
-                                            innovation.
+                                            operations.
                                         </p>
                                         <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px]">
-                                            We transform electronic waste management through innovative technology,
-                                            making responsible recycling accessible to every individual and organization while
-                                            creating measurable environmental impact.
+                                            Our platforms enable governments, enterprises, and licensed recyclers to track waste flows, monitor compliance, generate regulatory reports, and measure environmental impact with confidence.
                                         </p>
                                     </div>
                                     <div className="flex justify-start md:justify-end">
                                         <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px]">
-                                            As a subsidiary of W3 Eco-Friendly Ltd, we empower governments, agencies,
-                                            recyclers, and businesses with cutting-edge technology driving transparency,
-                                            efficiency, and measurable environmental impact.
+                                            As a subsidiary of W3 Eco-Friendly Ltd, W3 EcoTech focuses exclusively on software, analytics, and system integration supporting operational transparency and regulatory alignment across the ecosystem.
                                         </p>
                                     </div>
                                 </div>
@@ -192,8 +187,8 @@ const W3Ecotech = () => {
                                 <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-primary-foreground">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
-                                            src="/img/dashboard.png"
-                                            alt="TraceWaste dashboard interface showing real-time waste tracking"
+                                            src="/img/trace-waste.avif"
+                                            alt="Trace Waste dashboard interface showing real-time waste tracking"
                                             className="w-full h-full inset-0 object-cover object-center inline-block"
                                             width="155"
                                             height="165"
@@ -201,10 +196,9 @@ const W3Ecotech = () => {
                                         />
                                     </figure>
                                     <div>
-                                        <h3 className="text-center font-medium text-white text-2xl">TraceWaste</h3>
+                                        <h3 className="text-center font-medium text-white text-2xl">Trace Waste</h3>
                                         <p className="text-center text-white text-sm">
-                                            Track and monitor waste flow with real-time analytics and comprehensive
-                                            reporting.
+                                            Surveillance, Traceability & Compliance TraceWaste is W3 EcoTech’s digital surveillance and compliance platform for regulated waste streams.
                                         </p>
                                     </div>
                                 </article>
@@ -212,7 +206,7 @@ const W3Ecotech = () => {
                                 <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-[#09513E]">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
-                                            src="/img/dashboard-2.png"
+                                            src="/img/dashboard-2.avif"
                                             alt="Surveillance portal compliance monitoring dashboard"
                                             className="w-full h-full inset-0 object-cover object-center inline-block"
                                             width="155"
@@ -221,9 +215,9 @@ const W3Ecotech = () => {
                                         />
                                     </figure>
                                     <div>
-                                        <h3 className="text-center font-medium text-white text-2xl">Surveillance Portal</h3>
+                                        <h3 className="text-center font-medium text-white text-2xl">Dump Smart</h3>
                                         <p className="text-center text-white text-sm">
-                                            Compliance monitoring with advanced surveillance and reporting tools.
+                                            Solid Waste Operations & Dumpsite is a digital platform designed to optimize solid waste logistics and dumpsite operations.
                                         </p>
                                     </div>
                                 </article>
@@ -270,8 +264,8 @@ const W3Ecotech = () => {
                                 <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-primary">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
-                                            src="/img/dashboard.png"
-                                            alt="API integration interface for waste management systems"
+                                            src="/img/dashboard.avif"
+                                            alt="System Integration"
                                             className="w-full h-full inset-0 object-cover object-center inline-block"
                                             width="155"
                                             height="165"
@@ -279,9 +273,9 @@ const W3Ecotech = () => {
                                         />
                                     </figure>
                                     <div>
-                                        <h3 className="text-center font-medium text-white text-2xl">API</h3>
+                                        <h3 className="text-center font-medium text-white text-2xl">System Integration</h3>
                                         <p className="text-center text-white text-sm">
-                                            Integrate waste data and workflows seamlessly into your existing systems.
+                                            Integrate waste data, compliance records, and reporting workflows seamlessly into existing enterprise and government systems.
                                         </p>
                                     </div>
                                 </article>
@@ -289,8 +283,8 @@ const W3Ecotech = () => {
                                 <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-black">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
-                                            src="/img/dashboard-2.png"
-                                            alt="Metal services global trading network platform"
+                                            src="/img/dashboard-2.avif"
+                                            alt="Downstream Intelligence"
                                             className="w-full h-full inset-0 object-cover object-center inline-block"
                                             width="155"
                                             height="165"
@@ -298,9 +292,9 @@ const W3Ecotech = () => {
                                         />
                                     </figure>
                                     <div>
-                                        <h3 className="text-center font-medium text-white text-2xl">Metal Services</h3>
+                                        <h3 className="text-center font-medium text-white text-2xl">Downstream Intelligence</h3>
                                         <p className="text-center text-white text-sm">
-                                            Gain access to metal markets worldwide with our global trading network.
+                                            Support responsible downstream processing and material recovery through data visibility, partner coordination, and market intelligence.
                                         </p>
                                     </div>
                                 </article>
@@ -314,9 +308,9 @@ const W3Ecotech = () => {
                     <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
 
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
-                        <div className="max-w-xl text-center mx-auto">
+                        <div className="max-w-4xl text-center mx-auto">
                             <header className="mb-5 space-y-4">
-                                <h2 id="cta-heading" className="text-xl font-medium md:text-2xl lg:text-4xl md:leading-tight text-white">
+                                <h2 id="cta-heading" className="text-xl font-medium md:text-2xl lg:text-3xl md:leading-tight text-white">
                                     We are building technology for a cleaner, smarter future
                                 </h2>
                                 <p className="text-white/70">

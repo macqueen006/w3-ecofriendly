@@ -26,13 +26,13 @@ export default function Testimonial() {
     return (
         <>
             {/* Testimonials */}
-            <section className="relative max-w-[85rem] bg-[#dbe5e0] overflow-hidden px-4 py-10 mx-auto">
+            <section className="relative max-w-full bg-[#dbe5e0] overflow-hidden px-4 py-10 mx-auto">
                 {/* Blockquote */}
                 <blockquote className="text-center lg:mx-auto lg:w-3/5">
                     <header className="flex flex-col items-center gap-4 justify-center max-w-[964px] mx-auto">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="24" height="24" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.png"/>
+                            <img width="24" height="24" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.avif"/>
                             <p className="text-sm sm:text-base font-medium capitalize">testimonials</p>
                         </div>
                         <div className="text-gray-800 text-xl sm:text-2xl md:text-3xl md:leading-normal font-medium ">
@@ -45,7 +45,7 @@ export default function Testimonial() {
                         <div className="h-80 w-80 md:h-96 md:w-96 relative mx-auto flex justify-center items-center">
                             <div className="absolute inset-0">
                                 <img
-                                    src="/img/testimonial-img.png"
+                                    src="/img/testimonial-img.avif"
                                     className="inline-block w-full h-full object-cover"
                                     style={{ transform: 'translateX(-13%)' }}
                                     alt=""

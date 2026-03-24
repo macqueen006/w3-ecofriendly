@@ -84,7 +84,7 @@ export default function Header() {
             )}
 
             <header
-                className={`${isScrolled ? 'absolute' : 'fixed'} top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-10 w-full max-w-2xl mx-auto transition-all duration-300`}
+                className={`${isScrolled ? 'absolute' : 'fixed'} top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-10 w-full max-w-3xl mx-auto transition-all duration-300`}
                 role="banner"
             >
                 <nav
@@ -103,7 +103,7 @@ export default function Header() {
                             title="Go to W3 Eco Friendly homepage"
                         >
                             <img
-                                src="/img/logo.png"
+                                src="/img/logo.avif"
                                 className="inline-block object-cover h-10 w-10"
                                 width="40"
                                 height="40"
@@ -167,9 +167,9 @@ export default function Header() {
                         id="mobile-menu"
                         className={`${
                             isMenuOpen ? 'block' : 'hidden'
-                        } overflow-hidden transition-all duration-300 basis-full grow md:block`}
+                        } overflow-hidden transition-all duration-300 md:block pr-3`}
                     >
-                        <ul className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-between md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+                        <ul className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
                             {navLinks.map((link, index) => {
                                 const isActive = location.pathname === link.path;
                                 return (
@@ -199,7 +199,7 @@ export default function Header() {
                             })}
 
                             {/* User Profile */}
-                            <li className="flex justify-start md:justify-center items-center py-2 md:py-0">
+                            {/*<li className="flex justify-start md:justify-center items-center py-2 md:py-0">
                                 <Link
                                     className="group inline-flex items-center rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 border border-primary hover:border-opacity-70 transition-all"
                                     to="/profile"
@@ -208,7 +208,7 @@ export default function Header() {
                                     title="Go to your profile"
                                 >
                                     <img
-                                        src="/img/user.png"
+                                        src="/img/user.avif"
                                         className="w-10 h-10 inline-block object-cover rounded-full"
                                         width="40"
                                         height="40"
@@ -216,7 +216,7 @@ export default function Header() {
                                         loading="lazy"
                                     />
                                 </Link>
-                            </li>
+                            </li>*/}
                         </ul>
                     </div>
                 </nav>

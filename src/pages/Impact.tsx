@@ -11,7 +11,7 @@ const Impact = () => {
                 description="Discover W3 Eco Friendly's environmental impact: 52,847 electronics recycled, 8.5 tons of metals recovered, and 56 certificates issued. Learn how we're creating measurable change through sustainable e-waste management."
                 keywords="environmental impact, e-waste recycling statistics, electronics recycling Nigeria, sustainable waste management, metal recovery, carbon footprint reduction, toxic waste prevention"
                 url="/impact"
-                image="https:/w3eco-friendly.com/impact-hero.png"
+                image="https:/w3eco-friendly.com/impact-hero.avif"
             />
             <ImpactPageSchema />
 
@@ -19,7 +19,7 @@ const Impact = () => {
 
             <main id="main-content">
                 <section
-                    className="pt-24 bg-[url('/img/impact-hero.png')] min-h-screen md:min-h-[600px] lg:min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat"
+                    className="pt-24 bg-[url('/img/impact-hero.avif')] min-h-screen md:min-h-[600px] lg:min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat"
                     aria-labelledby="hero-heading"
                 >
                     <div className="max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 relative flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
@@ -28,11 +28,10 @@ const Impact = () => {
                                 <span className="text-sm md:text-base font-medium text-white">Our Environmental Impact</span>
                             </div>
                             <h1 id="hero-heading" className="text-white font-bold text-3xl sm:text-4xl lg:text-5xl">
-                                Measurable Change Real Results
+                                Measurable Impact. Verifiable Outcomes.
                             </h1>
                             <p className="text-white text-base sm:text-lg max-w-xl">
-                                Every device we recycle contributes to a cleaner, healthier environment. By keeping
-                                electronic waste out of landfills and giving devices a second life, we reduce pollution.
+                                W3 Eco-Friendly Ltd delivers measurable environmental and social value by enabling responsible electronic waste management across Nigeria.
                             </p>
                             <div className="flex flex-col justify-start items-center gap-2 sm:flex-row sm:gap-4">
                                 <a
@@ -45,7 +44,7 @@ const Impact = () => {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2 flex flex-col md:flex-row md:flex-wrap lg:flex-col gap-4 md:justify-center lg:justify-start">
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.png')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -61,7 +60,7 @@ const Impact = () => {
                                     <p className="text-sm">Electronics Recycled</p>
                                 </div>
                             </article>
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.png')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -90,7 +89,7 @@ const Impact = () => {
                                     </div>
                                 </div>
 
-                                <article className="w-full lg:w-64 h-36 rounded-lg bg-[url('/img/card-frame-3.png')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                                <article className="w-full lg:w-64 h-36 rounded-lg bg-[url('/img/card-frame-3.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                     <div className="flex flex-col gap-1 items-center text-white">
                                         <div>
                                             <img
@@ -123,7 +122,7 @@ const Impact = () => {
                                     height="44"
                                     alt=""
                                     className="w-5 h-5 md:w-6 md:h-6"
-                                    src="/img/sparkle-white.png"
+                                    src="/img/sparkle-white.avif"
                                     aria-hidden="true"
                                     loading="lazy"
                                 />
@@ -139,7 +138,7 @@ const Impact = () => {
                                 <div className="space-y-6 sm:space-y-8">
                                     <figure className="aspect-square relative max-w-sm mx-auto">
                                         <img
-                                            src="/img/impact-profile-1.png"
+                                            src="/img/impact-1.avif"
                                             className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:right-0 lg:-rotate-[14deg]"
                                             alt="Environmental protection from toxic e-waste materials"
                                             loading="lazy"
@@ -149,15 +148,16 @@ const Impact = () => {
                                     </figure>
                                     <div className="text-center text-white space-y-2 px-4">
                                         <h3 className="font-medium text-base sm:text-lg">Prevent Toxic Pollution</h3>
-                                        <p className="text-sm sm:text-base text-white/80">E-waste contains hazardous
-                                            materials like lead, mercury, and cadmium.</p>
+                                        <p className="text-sm sm:text-base text-white/80">
+                                            electronic waste contains hazardous substances that pose serious risks.
+                                        </p>
                                     </div>
                                 </div>
                             </article>
                             <article className="space-y-6 sm:space-y-8">
                                 <figure className="aspect-square relative max-w-sm mx-auto">
                                     <img
-                                        src="/img/impact-profile-2.png"
+                                        src="/img/impact-2.avif"
                                         className="w-full h-full inline-block object-cover rounded-lg object-center absolute inset-0"
                                         alt="Resource conservation through e-waste recycling"
                                         loading="lazy"
@@ -167,14 +167,15 @@ const Impact = () => {
                                 </figure>
                                 <div className="text-center text-white space-y-2 px-4">
                                     <h3 className="font-medium text-base sm:text-lg">Conserve Natural Resources</h3>
-                                    <p className="text-sm sm:text-base text-white/80">Recycling recovers valuable
-                                        materials like gold, silver, copper, and rare.</p>
+                                    <p className="text-sm sm:text-base text-white/80">
+                                        Recycling recovers valuable materials like gold, silver, copper, and rare.
+                                    </p>
                                 </div>
                             </article>
                             <article className="space-y-6 sm:space-y-8">
                                 <figure className="aspect-square relative max-w-sm mx-auto">
                                     <img
-                                        src="/img/impact-profile-3.png"
+                                        src="/img/impact-3.avif"
                                         className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:rotate-12"
                                         alt="Carbon emission reduction through sustainable recycling"
                                         loading="lazy"
@@ -184,8 +185,9 @@ const Impact = () => {
                                 </figure>
                                 <div className="text-center text-white space-y-2 px-4">
                                     <h3 className="font-medium text-base sm:text-lg">Reduce Carbon Footprint</h3>
-                                    <p className="text-sm sm:text-base text-white/80">Manufacturing new electronics from
-                                        recycled materials uses.</p>
+                                    <p className="text-sm sm:text-base text-white/80">
+                                        Extending the lifecycle of electronic assets significantly lowers.
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -197,7 +199,7 @@ const Impact = () => {
                     aria-labelledby="partners-heading"
                 >
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
-                        <div className="max-w-xl text-center mx-auto">
+                        <div className="max-w-2xl text-center mx-auto">
                             <div className="mb-5 space-y-4">
                                 <h2 id="partners-heading" className="text-xl font-medium md:text-2xl lg:text-4xl md:leading-tight text-white">
                                     Trusted By Leading Organizations

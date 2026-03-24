@@ -3,26 +3,26 @@ export default function WorkflowSection() {
     const workflowSteps = [
         {
             title: "Pickup Request",
-            description: "Submit a request and our team will arrive at your facility for secure collection.",
-            image: "/img/regenerated-1.png",
+            description: "Submit a structured service request. Our operations team schedules secure collection in line with approved routing, compliance requirements.",
+            image: "/img/regenerated-1.avif",
             imagePosition: "right"
         },
         {
             title: "Scheduling & Allocation",
-            description: "Pickups and audits are scheduled through our digital system for optimized routing and compliance tracking.",
-            image: "/img/regenerated-2.png",
+            description: "Collections are coordinated through our digital operations system to ensure optimized routing, accountability, and end-to-end compliance tracking.",
+            image: "/img/regenerated-2.avif",
             imagePosition: "left"
         },
         {
             title: "Processing & Recycling",
-            description: "Devices are processed at our certified facilities with environmental and safety protocols in place.",
-            image: "/img/regenerated-3.png",
+            description: "Devices are processed through approved facilities and verified downstream partners, operating under environmental, health, and safety control frameworks.",
+            image: "/img/regenerated-3.avif",
             imagePosition: "right"
         },
         {
             title: "Certification & Reporting",
-            description: "Clients receive official TraceWaste recycling certificates and downstream compliance documentation.",
-            image: "/img/regenerated-4.png",
+            description: "Clients receive Regulatory-verified recycling certificates, audit trails, and downstream documentation to support ESG reporting, regulatory filing, and internal governance.",
+            image: "/img/regenerated-4.avif",
             imagePosition: "left"
         }
     ];
@@ -33,11 +33,11 @@ export default function WorkflowSection() {
                 {/* Header Text */}
                 <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-3xl mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                        <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                        <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">How it Works</p>
                     </div>
                     <h2 className="text-xl sm:text-2xl font-medium leading-tight text-center px-4">
-                        A Secure, Traceable, and Fully Documented Workflow
+                        A Secure, Traceable, and Fully Documented <br/>Workflow
                     </h2>
                 </div>
 

@@ -28,7 +28,7 @@ interface OrganizationSchemaProps {
 export function OrganizationSchema({
     name = "W3 Eco Friendly",
     url = "https://w3eco-friendly.com",
-    logo = "https://w3eco-friendly.com/img/logo.png",
+    logo = "https://w3eco-friendly.com/img/logo.avif",
     description = "Sustainable and eco-friendly solutions for a greener future",
     address = {
         streetAddress: "Suit 73 & 74, Block D, Ipakodo Shopping Complex",
@@ -133,7 +133,7 @@ export const ContactPageSchema = () => {
             "@type": "Organization",
             "name": "W3 Eco Friendly Ltd",
             "url": "https://w3eco-friendly.com",
-            "logo": "https://w3eco-friendly.com/img/logo.png",
+            "logo": "https://w3eco-friendly.com/img/logo.avif",
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+234-807-787-5562",

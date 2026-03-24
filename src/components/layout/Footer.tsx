@@ -103,8 +103,7 @@ const Footer = () => {
                     {/* Mission Statement */}
                     <div className="text-white">
                         <p className="text-sm sm:text-base leading-relaxed font-nunito-sans">
-                            Turn your unused electronics into environmental impact through safe recycling and renewed
-                            devices.
+                            Supporting responsible technology lifecycle management through secure recycling, traceability, and verified downstream recovery.
                         </p>
                     </div>
                 </div>

@@ -5,6 +5,46 @@ import {OrganizationSchema, StatisticsSchema} from "../components/StructuredData
 import {Link} from "react-router";
 
 const About = () => {
+
+    const profiles = [
+        {
+            id: 1,
+            name: "Sodiq Adigun",
+            title: "Managing Director",
+            img: "frame-1.avif"
+        },
+        {
+            id: 2,
+            name: "Teri Wellington",
+            title: "Executive secretary/ Law",
+            img: "frame-2.avif"
+        },
+        {
+            id: 3,
+            name: "Zakari Dekina",
+            title: "Head of surveillance",
+            img: "frame-3.avif"
+        },
+        {
+            id: 4,
+            name: "Chineye Dijdh",
+            title: "Sales Marketing Specialist",
+            img: "frame-4.avif"
+        },
+        {
+            id: 5,
+            name: "Aibor Adewale Michael",
+            title: "HSE Officer",
+            img: "frame-5.avif"
+        },
+        {
+            id: 6,
+            name: "Adewale Oluwasegun",
+            title: "Auditor",
+            img: "frame-6.avif"
+        }
+    ];
+
     return (
         <>
             <SEO
@@ -22,7 +62,7 @@ const About = () => {
             <Header/>
             <main>
                 {/* Hero Section */}
-                <section className="pt-32 bg-[#061512] space-y-6 lg:space-y-10 px-4" aria-labelledby="hero-heading">
+                <section className="py-32 bg-[#061512] space-y-6 lg:space-y-10 px-4" aria-labelledby="hero-heading">
                     <h1 id="hero-heading" className="text-3xl text-center text-white/80">
                         We are Leading the Future of Sustainable <br /> E-Waste Management
                     </h1>
@@ -30,7 +70,7 @@ const About = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
                         <figure className="relative h-full w-full aspect-square">
                             <img
-                                src="/img/generated-6.png"
+                                src="/img/generated-6.avif"
                                 className="absolute inset-0 w-full h-full object-cover block"
                                 alt="Modern e-waste recycling facility with advanced technology"
                                 loading="eager"
@@ -54,31 +94,6 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* Mission Section */}
-                <section className="bg-[#061512] space-y-6 px-4 pb-6" aria-labelledby="mission-heading">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
-                        <article className="order-2 sm:order-1 text-white text-lg font-normal sm:col-span-2 sm:pr-13 flex flex-col items-center justify-center">
-                            <h2 id="mission-heading" className="sr-only">Our Mission</h2>
-                            <p>
-                                <strong>Mission Statement:</strong> To advance sustainable electronic waste management through secure
-                                technology solutions, regulatory partnership, and circular resource optimization, enabling
-                                safe environmental practices and national compliance adherence.
-                            </p>
-                        </article>
-
-                        <figure className="order-1 sm:order-2 relative h-full w-full aspect-square">
-                            <img
-                                src="/img/generated-7.png"
-                                className="absolute inset-0 w-full h-full object-cover block"
-                                alt="Team collaborating on sustainable waste management solutions"
-                                loading="lazy"
-                                width="400"
-                                height="400"
-                            />
-                        </figure>
-                    </div>
-                </section>
-
                 {/* Our Story Section */}
                 <section className="bg-[#061D18]" aria-labelledby="story-heading">
                     <div className="max-w-4xl mx-auto grid sm:grid-cols-[3.5fr_2.5fr] gap-6 sm:gap-10 py-10 px-4">
@@ -89,25 +104,22 @@ const About = () => {
                                     height="24"
                                     alt=""
                                     className="w-5 h-5 md:w-6 md:h-6"
-                                    src="/img/sparkle-white.png"
+                                    src="/img/sparkle-white.avif"
                                     loading="lazy"
                                 />
                                 <h2 id="story-heading" className="text-sm md:text-base text-white font-medium">Our Story</h2>
                             </header>
 
                             <p className="text-white mt-4">
-                                We3EcoFriendly began with a simple observation: electronic waste was growing exponentially,
-                                yet recycling infrastructure wasn't keeping pace. We saw an opportunity to bridge this gap
-                                with technology and innovation. Today, as a subsidiary of W3 Eco-Friendly Ltd, we've grown
-                                into a comprehensive platform offering TraceWaste certification, cloud-based ESG analytics,
-                                and end-to-end digital infrastructure for smart environmental monitoring.
+                                W3 Eco-friendly Ltd began with a simple but urgent observation: electronic waste in Nigeria was growing exponentially, while formal recycling infrastructure and accountability mechanisms were failing to keep pace. Recognizing the environmental, health, and regulatory risks posed by unmanaged e-waste, we identified an opportunity to bridge this gap through technology,
+                                W3 Ecotech a technology subsidiary focused on digital environmental infrastructure.
                             </p>
                         </article>
 
                         <aside className="space-y-6">
                             <figure className="h-64 w-full relative rounded-lg overflow-hidden">
                                 <img
-                                    src="/img/people.png"
+                                    src="/img/trash-truck.avif"
                                     alt="W3 Eco-friendly team members working together"
                                     className="absolute inset-0 w-full h-full object-cover block"
                                     loading="lazy"
@@ -140,16 +152,14 @@ const About = () => {
                                         height="24"
                                         alt=""
                                         className="w-5 h-5 sm:w-6 sm:h-6"
-                                        src="/img/sparkle-white.png"
+                                        src="/img/sparkle-white.avif"
                                         loading="lazy"
                                     />
                                     <h3 className="text-sm sm:text-base text-white font-medium">Our Vision</h3>
                                 </header>
 
                                 <p className="text-white text-base sm:text-lg leading-relaxed">
-                                    To become Africa's premier environmental technology platform, setting the standard for
-                                    sustainable e-waste management through innovation, transparency, and measurable impact
-                                    across the continent.
+                                    To advance sustainable electronic waste management through secure technology solutions, regulatory partnership, and circular resource optimization—enabling safe environmental practices, national compliance, and measurable impact.
                                 </p>
                             </article>
 
@@ -161,16 +171,14 @@ const About = () => {
                                         height="24"
                                         alt=""
                                         className="w-5 h-5 sm:w-6 sm:h-6"
-                                        src="/img/sparkle-white.png"
+                                        src="/img/sparkle-white.avif"
                                         loading="lazy"
                                     />
                                     <h3 className="text-sm sm:text-base text-white font-medium">Our Mission</h3>
                                 </header>
 
                                 <p className="text-white text-base sm:text-lg leading-relaxed">
-                                    To advance sustainable electronic waste management through secure technology solutions,
-                                    regulatory partnerships, and circular resource optimization, enabling safe environmental
-                                    practices and national compliance adherence.
+                                    To become Nigeria’s most trusted e-waste management company, setting the benchmark for transparency, compliance, and circular economy leadership through innovation and responsible operations.
                                 </p>
                             </article>
                         </div>
@@ -183,16 +191,15 @@ const About = () => {
                         <header className="sm:col-span-2 sm:col-start-1 text-white space-y-6">
                             <h2 id="team-heading" className="font-semibold text-2xl">Our Team</h2>
                             <p className="max-w-[274px]">
-                                We are driven by a shared mission to build sustainable solutions that protect the
-                                environment while enabling innovation and growth.
+                                Our team is led by an innovative Project Director and supported by strong regulatory backing, alongside professionals and expertise across environmental management, technology, compliance, and circular economy systems. Together, we are driven by a shared mission
                             </p>
                         </header>
 
-                        {[1, 2, 3, 4, 5, 6].map((num) => (
-                            <article key={num} className="col-span-1">
+                        {profiles.map((profile) => (
+                            <article key={profile.id} className="col-span-1">
                                 <figure>
                                     <img
-                                        src={`/img/profile-${num}.png`}
+                                        src={`/img/${profile.img}`}
                                         alt={`Team member profile`}
                                         className="w-full aspect-square inline-block object-cover rounded-tl-lg rounded-tr-lg"
                                         loading="lazy"
@@ -200,8 +207,8 @@ const About = () => {
                                         height="300"
                                     />
                                     <figcaption className="rounded-bl-lg rounded-br-lg bg-black space-y-2 p-2">
-                                        <p className="text-white text-sm lg:text-base">Odebode Mayowa Tomiwa</p>
-                                        <p className="text-white/70 text-sm">UI Designer</p>
+                                        <p className="text-white text-sm lg:text-base">{profile.name}</p>
+                                        <p className="text-white/70 text-sm">{profile.title}</p>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -216,13 +223,13 @@ const About = () => {
                     <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
 
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
-                        <div className="max-w-xl text-center mx-auto">
+                        <div className="max-w-2xl text-center mx-auto">
                             <header className="mb-5 space-y-4">
                                 <h2 id="cta-heading" className="text-xl font-medium md:text-2xl md:leading-tight text-white">
                                     Powering Smarter Recycling with Technology
                                 </h2>
                                 <p className="text-white/70">
-                                    Learn how We3 Ecotech supports businesses with traceable, tech-driven recycling tools.
+                                    We believe that the future of e-waste management lies at the intersection of technology, regulation, and transparency.
                                 </p>
                             </header>
 

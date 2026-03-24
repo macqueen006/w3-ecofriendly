@@ -13,8 +13,8 @@ export default function ServicesSection() {
         },
         {
             number: "",
-            title: "Certified Data Erasure",
-            description: "Secure digital sanitation protocols ensuring complete and irreversible removal of sensitive data.",
+            title: "(ITAD)",
+            description: "W3 is able to securely and responsibly process IT assets to be re-used or recovering of components.",
             ctaText: "Data Erasure",
             icon: (
                 <svg width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,8 +24,8 @@ export default function ServicesSection() {
         },
         {
             number: "02",
-            title: "Dismantling & Recycling",
-            description: "Environmentally compliant dismantling, material recovery, and recycling processes aligned.",
+            title: "Electronic & Recycling",
+            description: "Recovering new products and materials from discarded and old electonic assets",
             ctaText: "Learn More",
             icon: (
                 <svg width="37" height="31" viewBox="0 0 37 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,13 +35,12 @@ export default function ServicesSection() {
         },
         {
             number: "",
-            title: "Certificate Issuance",
-            description: "TraceWaste-verified recycling certificates and audit documentation for ESG reporting, regulatory filing.",
+            title: "Data Center Services",
+            description: "W3 processes your data center's assets while ensuring data destruction.",
             ctaText: "View Sample",
             icon: (
-                <svg width="40" height="34" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.9055 32.2C10.7003 32.2 6.59879 32.2 4.04939 29.9512C1.5 27.7055 1.5 24.086 1.5 16.85C1.5 9.61401 1.5 5.99601 4.04939 3.74724C6.59879 1.49846 10.7003 1.5 18.9055 1.5C27.1107 1.5 31.2122 1.5 33.7616 3.74724C35.8134 5.55854 36.2148 8.25553 36.2926 13.0125M11.7385 10.71H26.0725M11.7385 18.385H17.8817" stroke="#07533A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M35.5121 26.2213C36.6926 25.578 37.5712 24.6711 38.0219 23.6306C38.4726 22.59 38.4723 21.4692 38.021 20.4288C37.5698 19.3884 36.6907 18.4818 35.5098 17.8389C34.3289 17.196 32.9069 16.8499 31.4474 16.8501H30.9334C29.4742 16.8502 28.0524 17.1966 26.8719 17.8396C25.6913 18.4826 24.8126 19.3892 24.3616 20.4296C23.9105 21.4699 23.9104 22.5906 24.3612 23.631C24.8119 24.6714 25.6904 25.5781 26.8708 26.2213M26.8708 26.2213C28.0506 26.8661 29.4734 27.2128 30.9334 27.2113H31.4454C32.9054 27.2128 34.3282 26.8661 35.508 26.2213L36.7018 29.038C37.1564 30.1125 37.3858 30.6497 37.3223 30.9844C37.1933 31.6813 36.4356 32.197 35.5408 32.2001C35.1108 32.2001 34.4678 31.9484 33.1798 31.4418C32.6269 31.2238 32.3525 31.1164 32.0699 31.0519C31.4955 30.9231 30.8833 30.9231 30.3089 31.0519C30.0263 31.1164 29.7499 31.2238 29.199 31.4418C27.911 31.9484 27.268 32.2016 26.838 32.2001C25.9432 32.197 25.1855 31.6813 25.0565 30.9844C24.9951 30.6497 25.2203 30.1125 25.677 29.038L26.8708 26.2213Z" stroke="#07533A" strokeWidth="3"/>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 0C6.58906 0 0 3.54808 0 8.07692V21.9231C0 26.4519 6.58906 30 15 30C23.4109 30 30 26.4519 30 21.9231V8.07692C30 3.54808 23.4109 0 15 0ZM27.5 15C27.5 16.3875 26.2687 17.8024 24.1234 18.8827C21.7078 20.0986 18.4672 20.7692 15 20.7692C11.5328 20.7692 8.29219 20.0986 5.87656 18.8827C3.73125 17.8024 2.5 16.3875 2.5 15V12.6C5.16563 14.7635 9.72344 16.1538 15 16.1538C20.2766 16.1538 24.8344 14.7577 27.5 12.6V15ZM5.87656 4.19423C8.29219 2.97837 11.5328 2.30769 15 2.30769C18.4672 2.30769 21.7078 2.97837 24.1234 4.19423C26.2687 5.27452 27.5 6.68942 27.5 8.07692C27.5 9.46442 26.2687 10.8793 24.1234 11.9596C21.7078 13.1755 18.4672 13.8462 15 13.8462C11.5328 13.8462 8.29219 13.1755 5.87656 11.9596C3.73125 10.8793 2.5 9.46442 2.5 8.07692C2.5 6.68942 3.73125 5.27452 5.87656 4.19423ZM24.1234 25.8058C21.7078 27.0216 18.4672 27.6923 15 27.6923C11.5328 27.6923 8.29219 27.0216 5.87656 25.8058C3.73125 24.7255 2.5 23.3106 2.5 21.9231V19.5231C5.16563 21.6865 9.72344 23.0769 15 23.0769C20.2766 23.0769 24.8344 21.6808 27.5 19.5231V21.9231C27.5 23.3106 26.2687 24.7255 24.1234 25.8058Z" fill="#07533A"/>
                 </svg>
             )
         }
@@ -59,7 +58,7 @@ export default function ServicesSection() {
                 {/* Header */}
                 <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-[946px] mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                        <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
+                        <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">Our Services</p>
                     </div>
                     <h2 className="text-lg sm:text-xl font-medium leading-tight sm:max-w-xl text-center px-4">

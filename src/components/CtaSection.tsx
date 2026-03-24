@@ -3,13 +3,13 @@ import {Link} from "react-router";
 const CTASection = () => {
     return (
         <section
-            className="bg-[url('/img/cta.png')] bg-cover bg-center relative"
+            className="bg-[url('/img/cta.avif')] bg-cover bg-center relative"
             aria-labelledby="cta-heading"
         >
             {/* Overlay for text readability */}
             <div className="absolute inset-0 bg-black/30" aria-hidden="true"></div>
 
-            <div className="space-y-8 sm:space-y-10 py-12 max-w-[840px] mx-auto relative text-white px-4 sm:px-6">
+            <div className="space-y-8 sm:space-y-10 py-12 max-w-[850px] mx-auto relative text-white px-4 sm:px-6">
                 {/* Content */}
                 <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center z-10 relative">
                     <h2
@@ -18,9 +18,8 @@ const CTASection = () => {
                     >
                         Ready to Advance Your Sustainability Goals?
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed font-normal text-center max-w-[700px] mx-auto px-2">
-                        Join organizations committed to responsible technology management, e-waste traceability, and environmental compliance
-                        excellence in Nigeria.
+                    <p className="text-sm sm:text-base md:text-lg leading-relaxed font-normal text-center w-full px-2">
+                        Partner with a technology-enabled e-waste management provider supporting traceability, regulatory alignment, and responsible technology lifecycle management across Nigeria.
                     </p>
                 </div>
 
@@ -32,7 +31,7 @@ const CTASection = () => {
                         aria-label="Get started with W3 Eco-friendly e-waste management services"
                     >
                         <span className="text-base sm:text-lg leading-relaxed font-normal">
-                          Get Started
+                          Engage Our Team
                         </span>
                     </Link>
                 </div>

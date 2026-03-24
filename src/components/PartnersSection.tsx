@@ -1,24 +1,29 @@
 export default function PartnersSection() {
     const partners = [
         {
-            name: "LAWMA",
-            logo: "/img/lawma.png",
-            alt: "LAWMA- Trusted e-waste management partner"
-        },
-        {
             name: "LASEPA",
-            logo: "/img/lasepa.png",
+            logo: "/img/lasepa.avif",
             alt: "LASEPA - Lagos State Environmental Protection Agency partner"
         },
         {
-            name: "NESREA",
-            logo: "/img/neserea.png",
-            alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency"
+            name: "EPRON",
+            logo: "/img/epron.avif",
+            alt: "EPRON - Lagos State Environmental Protection Agency partner"
         },
         {
             name: "Federal Ministry of Environment",
-            logo: "/img/environment.png",
+            logo: "/img/environment.avif",
             alt: "Federal Ministry of Environment Nigeria regulatory partner"
+        },
+        {
+            name: "NESREA",
+            logo: "/img/neserea.avif",
+            alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency"
+        },
+        {
+            name: "LAWMA",
+            logo: "/img/lawma.avif",
+            alt: "LAWMA- Trusted e-waste management partner"
         }
     ];
 
@@ -27,22 +32,23 @@ export default function PartnersSection() {
             className="bg-[#DBF5EC] py-6"
             aria-labelledby="partners-heading"
         >
-            <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto space-y-4">
+            <div className="max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto space-y-4">
                 {/* Header */}
-                <h2 id="partners-heading" className="text-neutral-400 text-center text-xl sm:text-2xl lg:text-3xl font-medium">
+                <h2 id="partners-heading"
+                    className="text-neutral-400 text-center text-xl sm:text-2xl lg:text-3xl font-medium">
                     Regulatory Partners & Certifications
                 </h2>
 
                 {/* Partners Grid */}
                 <div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4"
                     role="list"
                     aria-label="List of regulatory partners and certifications"
                 >
                     {partners.map((partner, index) => (
                         <div key={index}
-                            role="listitem"
-                            className="flex justify-start items-center gap-3 md:gap-[14px] p-4 rounded-lg hover:bg-white/50 transition-colors duration-200"
+                             role="listitem"
+                             className="flex justify-start items-center gap-3 md:gap-[14px] p-4 rounded-lg hover:bg-white/50 transition-colors duration-200"
                         >
                             <img
                                 src={partner.logo}
@@ -59,6 +65,8 @@ export default function PartnersSection() {
                     ))}
                 </div>
             </div>
+            <p className="text-center mt-4">Logos displayed represent institutional engagement, oversight collaboration, or regulatory
+                interaction in line with applicable mandates.</p>
         </section>
     );
 }

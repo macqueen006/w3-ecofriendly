@@ -5,21 +5,21 @@ export default function ProductSection() {
             price: "₦350,000",
             name: "MacBook Air",
             description: "2x Touch Display 2024",
-            image: "/img/product.png"
+            image: "/img/product.avif"
         },
         {
             id: 2,
             price: "₦350,000",
             name: "EliteBook",
             description: "840 G6 2019,512GB 236 SSD",
-            image: "/img/product.png"
+            image: "/img/product.avif"
         },
         {
             id: 3,
             price: "₦350,000",
             name: "MacBook Air",
             description: "2x Touch Display 2024",
-            image: "/img/product.png"
+            image: "/img/product.avif"
         }
     ];
 
@@ -31,11 +31,11 @@ export default function ProductSection() {
                     <div className="flex flex-col items-center gap-4 justify-center">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                            <img src="/img/sparkle.png" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6"/>
+                            <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6"/>
                             <p className="text-sm sm:text-base">Refurbished Technology</p>
                         </div>
                         <h2 className="text-base sm:text-2xl font-medium leading-tight sm:leading-snug text-center px-4">
-                            Enterprise-Grade Refurbished Devices for Sustainable IT Procurement
+                            Enterprise-Grade Refurbished Devices for <br/>Sustainable IT Procurement
                         </h2>
                     </div>
                 </div>

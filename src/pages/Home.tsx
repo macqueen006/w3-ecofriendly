@@ -18,10 +18,10 @@ const Home = () => {
         <>
             <SEO
                 title="Home - Nigeria's leading e-waste management company"
-                description="W3 Eco-friendly Ltd - Nigeria's leading e-waste management company. Secure electronic waste collection, certified recycling, data destruction, and refurbished technology solutions."
+                description="W3 Eco-friendly Ltd Nigeria's leading e-waste management company. Secure electronic waste collection, certified recycling, data destruction, and refurbished technology solutions."
                 keywords="e-waste management Nigeria, electronic waste recycling Lagos, data destruction services, certified e-waste disposal, refurbished electronics Nigeria, LASEPA approved recycling"
                 url="/"
-                image="https://w3eco-friendly.com/hero.png"
+                image="https://w3eco-friendly.com/hero.avif"
             />
             <OrganizationSchema/>
 

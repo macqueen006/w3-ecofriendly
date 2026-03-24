@@ -20,10 +20,8 @@ const Newsletter = () => {
 
     return (
         <section className="bg-[#072416] py-10 px-4 relative overflow-hidden">
-            <div
-                className="absolute bottom-0 left-[200px] w-64 h-64 bg-[#BDFFED]/50 rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-            <div
-                className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C]/30 rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2"></div>
+            <div className="absolute bottom-0 left-[200px] w-64 h-64 bg-[#BDFFED]/50 rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C]/30 rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2"></div>
             <div className="max-w-[871px] mx-auto space-y-4 text-white text-center">
                 {/* Heading */}
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight sm:leading-tight md:leading-tight lg:leading-[96px] font-bold">
@@ -53,7 +51,7 @@ const Newsletter = () => {
                     </div>
 
                     {/* Tablet & Desktop Layout */}
-                    <div className="hidden sm:flex border max-w-lg mx-auto border-white rounded-full p-1 bg-[#072416]/50 backdrop-blur-sm">
+                    <div className="hidden sm:flex border max-w-2xl mx-auto border-white rounded-full p-1 bg-[#072416]/50 backdrop-blur-sm">
                         <input
                             type="email"
                             placeholder="Enter your Mail Address"
@@ -69,8 +67,8 @@ const Newsletter = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed sm:leading-relaxed md:leading-relaxed font-medium px-4 sm:px-0 max-w-lg mx-auto">
-                Discover our latest repurified tech and stay informed on sustainable product drops.
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed sm:leading-relaxed md:leading-relaxed font-medium px-4 sm:px-0 max-w-2xl mx-auto">
+                    Stay informed on sustainability insights, refurbished technology & Components availability, and developments across responsible e-waste management
                 </p>
             </div>
         </section>

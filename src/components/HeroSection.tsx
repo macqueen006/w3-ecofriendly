@@ -2,12 +2,12 @@ export default function HeroSection() {
     const stats = [
         {
             value: "3,242.7+",
-            label: "Tons of E-Waste Recovered",
+            label: "Tons Recovered",
             ariaLabel: "Over 3,242 tons of electronic waste recovered"
         },
         {
             value: "1,000+",
-            label: "CO2 Emissions Avoided (Tons)",
+            label: "Emissions Avoided",
             ariaLabel: "Over 1,000 tons of CO2 emissions avoided"
         },
         {
@@ -19,7 +19,7 @@ export default function HeroSection() {
 
     return (
         <section
-            className="bg-[url('/img/hero.png')] bg-cover bg-center relative"
+            className="bg-[url('/img/hero.avif')] bg-cover bg-center relative"
             aria-labelledby="hero-heading"
         >
             <div className="max-w-4xl mx-auto px-4 xl:px-0 pt-24 sm:pt-32 md:pt-40 space-y-6">
@@ -34,8 +34,7 @@ export default function HeroSection() {
 
                 {/* Supporting Description */}
                 <p className="text-white text-base sm:text-lg text-center max-w-2xl mx-auto">
-                    W3 Eco-friendly Ltd provides secure, compliant, and technology-driven solutions for electronic
-                    waste collection, data sanitization, and certified recycling in Nigeria.
+                    W3 Eco-Friendly Ltd delivers secure, auditable, and regulator-aligned solutions for electronic waste collection, downstream management, and certified recycling across Nigeria.
                 </p>
 
                 {/* Call-to-Action Buttons */}

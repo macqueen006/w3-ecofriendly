@@ -6,23 +6,23 @@ const FAQSection = () => {
     const faqs = [
         {
             question: "What does We3 Ecofriendly do?",
-            answer: "We3 Ecofriendly helps individuals and businesses recycle electronic waste safely. We offer scheduled pickups, certified recycling, refurbished electronics, and expert support."
+            answer: "W3 Eco-Friendly Ltd provides structured electronic waste collection, downstream recycling coordination, compliance documentation, and sustainability reporting support for organizations and institutions."
         },
         {
-            question: "How do I schedule a pickup?",
-            answer: "You can easily schedule a pickup through our website or mobile app. Simply select your preferred date and time, list the items you want to recycle, and our team will come to your location to collect them."
+            question: "Do you work with enterprises and institutions?",
+            answer: "Yes. We provide enterprise-grade e-waste management solutions, including bulk asset collection, data destruction, traceability, compliance reporting, and ESG-aligned documentation for organizations across multiple sectors."
         },
         {
             question: "Do you support businesses?",
             answer: "Yes! We offer comprehensive B2B solutions for businesses of all sizes. Our services include bulk e-waste collection, asset management, data destruction, and compliance reporting to help your organization meet sustainability goals."
         },
         {
-            question: "Can I speak to an expert?",
-            answer: "Absolutely! Our team of e-waste specialists is available to answer your questions. You can reach us through our contact page, phone support, or live chat. We're here to help you make informed decisions about electronic recycling."
+            question: "How do organizations request a collection?",
+            answer: "Organizations may submit a service request through our platform or engage our operations team directly to scope collections and compliance requirements."
         },
         {
             question: "What happens after collection?",
-            answer: "After collection, your electronics are transported to our certified facility where they undergo thorough sorting, data wiping, and responsible recycling. Reusable components are refurbished, while materials are safely processed to minimize environmental impact."
+            answer: "Collected assets are transported through controlled logistics to approved processing facilities where they undergo sorting, data sanitization, recovery, and responsible downstream recycling, supported by documentation and reporting."
         }
     ];
 
@@ -37,7 +37,7 @@ const FAQSection = () => {
                     {/* Header */}
                     <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 justify-center max-w-4xl mx-auto">
                         <div className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="24" height="24" alt="" src="/img/sparkle.png"/>
+                            <img width="24" height="24" alt="" src="/img/sparkle.avif"/>
                             <p className="text-sm sm:text-base font-medium">FAQS</p>
                         </div>
                         <h2 className="text-base sm:text-2xl font-bold md:leading-tight max-w-2xl mx-auto text-gray-900 text-center">
