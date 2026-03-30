@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 export const MaintenancePage = () => {
     return (
         <div
-            className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <motion.div
                 initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
@@ -65,7 +65,7 @@ export const MaintenancePage = () => {
                 >
                     <div className="flex items-start space-x-3">
                         <svg
-                            className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5"
+                            className="h-6 w-6 text-green-600 shrink-0 mt-0.5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -89,7 +89,7 @@ export const MaintenancePage = () => {
 
                     <div className="flex items-start space-x-3">
                         <svg
-                            className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5"
+                            className="h-6 w-6 text-green-600 shrink-0 mt-0.5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -145,7 +145,7 @@ export const MaintenancePage = () => {
                             <motion.div
                                 animate={{opacity: [0.5, 1, 0.5]}}
                                 transition={{duration: 2, repeat: Infinity, ease: "easeInOut"}}
-                                className="h-full w-full bg-gradient-to-r from-transparent via-white to-transparent opacity-50"
+                                className="h-full w-full bg-linear-to-r from-transparent via-white to-transparent opacity-50"
                             />
                         </motion.div>
                     </div>

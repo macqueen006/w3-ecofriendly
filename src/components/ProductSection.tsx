@@ -31,7 +31,7 @@ export default function ProductSection() {
                     <div className="flex flex-col items-center gap-4 justify-center">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
-                            <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6"/>
+                            <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" loading="lazy" decoding="async"/>
                             <p className="text-sm sm:text-base">Refurbished Technology</p>
                         </div>
                         <h2 className="text-base sm:text-2xl font-medium leading-tight sm:leading-snug text-center px-4">
@@ -41,7 +41,7 @@ export default function ProductSection() {
                 </div>
 
                 {/* Products Section */}
-                <div className="space-y-8 sm:space-y-10 md:space-y-[44px]">
+                <div className="space-y-8 sm:space-y-10 md:space-y-11">
                     {/* Product Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
                         {products.map((product) => (
@@ -72,35 +72,39 @@ type ProductCard = {
 function ProductCard({product}: { product: ProductCard }) {
     return (
         <div
-            className="bg-white rounded-lg overflow-hidden relative h-full min-h-[380px] sm:min-h-64 flex flex-col shadow-sm hover:shadow-xl transition-shadow duration-300">
+            className="bg-white rounded-lg overflow-hidden relative h-full min-h-95 sm:min-h-64 flex flex-col shadow-sm hover:shadow-xl transition-shadow duration-300">
             {/* Blob background decorations */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div
-                    className="absolute top-[65%] left-[50%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-emerald-900/20 rounded-full blur-2xl"/>
+                    className="absolute top-[65%] left-[50%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-emerald-900/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-[5%] left-[15%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-emerald-900/20 rounded-full blur-2xl"/>
+                    className="absolute top-[5%] left-[15%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-emerald-900/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-[35%] left-[70%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-[#008661]/20 rounded-full blur-2xl"/>
+                    className="absolute top-[35%] left-[70%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-[#008661]/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-[2%] left-[40%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-[#7929FF]/20 rounded-full blur-2xl"/>
+                    className="absolute top-[2%] left-[40%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-[#7929FF]/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-[45%] left-[8%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-[#6842FF]/20 rounded-full blur-2xl"/>
+                    className="absolute top-[45%] left-[8%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-[#6842FF]/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-[2%] left-0 w-20 h-28 sm:w-[91px] sm:h-[142px] bg-[#064E3B]/20 rounded-full blur-2xl"/>
+                    className="absolute top-[2%] left-0 w-20 h-28 sm:w-22.75 sm:h-35.5 bg-[#064E3B]/20 rounded-full blur-2xl"/>
                 <div
-                    className="absolute top-0 left-[75%] w-20 h-28 sm:w-[91px] sm:h-[142px] bg-[#00DB2C]/20 rounded-full blur-2xl"/>
+                    className="absolute top-0 left-[75%] w-20 h-28 sm:w-22.75 sm:h-35.5 bg-[#00DB2C]/20 rounded-full blur-2xl"/>
             </div>
 
             {/* Product Image Container */}
-            <div className="relative z-10 p-4 flex-grow">
+            <div className="relative z-10 p-4 grow">
                 <span className="absolute top-4 left-4 sm:top-6 sm:left-6 font-medium bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg">
                   {product.price}
                 </span>
-                <div className="w-full h-48 sm:h-56 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                <div className="w-full h-48 sm:h-56 bg-linear-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
                     {product.image ? (
                         <img
                             src={product.image}
                             alt={product.name}
+                            width={400}
+                            height={224}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover"
                         />
                     ) : (

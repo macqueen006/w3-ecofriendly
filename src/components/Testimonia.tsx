@@ -29,10 +29,10 @@ export default function Testimonial() {
             <section className="relative max-w-full bg-[#dbe5e0] overflow-hidden px-4 py-10 mx-auto">
                 {/* Blockquote */}
                 <blockquote className="text-center lg:mx-auto lg:w-3/5">
-                    <header className="flex flex-col items-center gap-4 justify-center max-w-[964px] mx-auto">
+                    <header className="flex flex-col items-center gap-4 justify-center max-w-241 mx-auto">
                         <div
                             className="inline-flex w-fit justify-center items-center gap-2.5 px-6 py-2 bg-[#CEDAD6] rounded-full">
-                            <img width="24" height="24" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.avif"/>
+                            <img width="24" height="24" className="sm:w-6 sm:h-6" alt="sparkle" src="/img/sparkle.avif" loading="lazy" decoding="async"/>
                             <p className="text-sm sm:text-base font-medium capitalize">testimonials</p>
                         </div>
                         <div className="text-gray-800 text-xl sm:text-2xl md:text-3xl md:leading-normal font-medium ">
@@ -40,7 +40,7 @@ export default function Testimonial() {
                         </div>
                     </header>
 
-                    <div className="mt-6 relative flex justify-center items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px]">
+                    <div className="mt-6 relative flex justify-center items-center min-h-75 sm:min-h-87.5 md:min-h-100 lg:min-h-112.5">
                         {/* Third - Always visible */}
                         <div className="h-80 w-80 md:h-96 md:w-96 relative mx-auto flex justify-center items-center">
                             <div className="absolute inset-0">
@@ -52,7 +52,7 @@ export default function Testimonial() {
                                 />
                             </div>
                             {/* content */}
-                            <div className="relative z-[2] w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-64 lg:h-64 flex flex-col justify-center items-center">
+                            <div className="relative z-2 w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-64 lg:h-64 flex flex-col justify-center items-center">
                                 <div className="mb-1 flex justify-center items-center">
                                     <svg width="30" height="30" className="h-8 w-8 sm:h-10 sm:w-10" viewBox="0 0 78 78" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">

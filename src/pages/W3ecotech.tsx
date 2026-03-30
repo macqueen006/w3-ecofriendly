@@ -55,7 +55,7 @@ const W3Ecotech = () => {
                             <div className="bg-white/10 p-4 rounded-lg w-fit ml-auto">
                                 <p className="text-white text-sm sm:text-base">Nature for a Sustained future</p>
                             </div>
-                            <div className="space-y-4 bg-white/10 p-4 rounded-lg text-white max-w-full sm:max-w-[300px] ml-auto">
+                            <div className="space-y-4 bg-white/10 p-4 rounded-lg text-white max-w-full sm:max-w-75 ml-auto">
                                 <strong className="block text-sm sm:text-base">Waste Management</strong>
                                 <span className="text-sm sm:text-base">
                                     Join us today in enhancing compliance and efficiency throughout recycling value chain
@@ -86,6 +86,7 @@ const W3Ecotech = () => {
                                                 width="28"
                                                 height="28"
                                                 loading="eager"
+                                                decoding="async"
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
@@ -94,6 +95,7 @@ const W3Ecotech = () => {
                                                 width="28"
                                                 height="28"
                                                 loading="eager"
+                                                decoding="async"
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
@@ -102,6 +104,7 @@ const W3Ecotech = () => {
                                                 width="28"
                                                 height="28"
                                                 loading="eager"
+                                                decoding="async"
                                             />
                                             <img
                                                 className="shrink-0 size-7 rounded-full"
@@ -110,6 +113,7 @@ const W3Ecotech = () => {
                                                 width="28"
                                                 height="28"
                                                 loading="eager"
+                                                decoding="async"
                                             />
                                         </div>
                                         <div className="text-white">
@@ -135,6 +139,7 @@ const W3Ecotech = () => {
                                     src="/img/sparkle-white.avif"
                                     aria-hidden="true"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                                 <p className="text-sm md:text-base font-medium text-white">About Us</p>
                             </div>
@@ -144,7 +149,7 @@ const W3Ecotech = () => {
                         </header>
 
                         <div className="relative">
-                            <figure className="max-w-[440px] mx-auto h-64 sm:h-80 md:h-96 relative">
+                            <figure className="max-w-110 mx-auto h-64 sm:h-80 md:h-96 relative">
                                 <div className="w-full h-full relative rounded-lg overflow-hidden">
                                     <img
                                         src="/img/hd-image.avif"
@@ -153,6 +158,7 @@ const W3Ecotech = () => {
                                         width="440"
                                         height="384"
                                         loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </figure>
@@ -160,17 +166,17 @@ const W3Ecotech = () => {
                             <div className="w-full h-full absolute inset-0 p-4 sm:p-6 lg:p-4">
                                 <div className="w-full max-w-2xl mx-auto h-full relative space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-24">
                                     <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-6">
-                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px] h-fit">
+                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-75.75 h-fit">
                                             W3 EcoTech is an environmental technology company building secure digital
                                             infrastructure for waste management, recycling, and circular-economy
                                             operations.
                                         </p>
-                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px]">
+                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-75.75">
                                             Our platforms enable governments, enterprises, and licensed recyclers to track waste flows, monitor compliance, generate regulatory reports, and measure environmental impact with confidence.
                                         </p>
                                     </div>
                                     <div className="flex justify-start md:justify-end">
-                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-[303px]">
+                                        <p className="text-xs sm:text-sm text-white p-3 sm:p-4 bg-white/10 rounded-lg w-full md:max-w-75.75">
                                             As a subsidiary of W3 Eco-Friendly Ltd, W3 EcoTech focuses exclusively on software, analytics, and system integration supporting operational transparency and regulatory alignment across the ecosystem.
                                         </p>
                                     </div>
@@ -184,7 +190,7 @@ const W3Ecotech = () => {
                     <div className="max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto">
                         <div className="space-y-10">
                             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-primary-foreground">
+                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-75 bg-primary-foreground">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
                                             src="/img/trace-waste.avif"
@@ -193,6 +199,7 @@ const W3Ecotech = () => {
                                             width="155"
                                             height="165"
                                             loading="lazy"
+                                            decoding="async"
                                         />
                                     </figure>
                                     <div>
@@ -203,7 +210,7 @@ const W3Ecotech = () => {
                                     </div>
                                 </article>
 
-                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-[#09513E]">
+                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-75 bg-[#09513E]">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
                                             src="/img/dashboard-2.avif"
@@ -212,6 +219,7 @@ const W3Ecotech = () => {
                                             width="155"
                                             height="165"
                                             loading="lazy"
+                                            decoding="async"
                                         />
                                     </figure>
                                     <div>
@@ -224,7 +232,7 @@ const W3Ecotech = () => {
                             </div>
 
                             <header className="relative max-w-2xl mx-auto px-4">
-                                <div className="relative max-w-[420px] mx-auto">
+                                <div className="relative max-w-105 mx-auto">
                                     <div className="hidden sm:block absolute -top-12 -left-12" aria-hidden="true">
                                         <svg width="75" height="89" viewBox="0 0 75 89" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -240,7 +248,7 @@ const W3Ecotech = () => {
                                         </svg>
                                     </div>
                                     <div className="hidden sm:block absolute -bottom-7 left-0 right-0 overflow-hidden" aria-hidden="true">
-                                        <svg className="w-full max-w-[400px] mx-auto" height="35" viewBox="0 0 565 35"
+                                        <svg className="w-full max-w-100 mx-auto" height="35" viewBox="0 0 565 35"
                                              fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M501.698 0.740234C501.698 0.740234 366.784 15.6792 280.805 8.10544C197.194 0.740234 63.3027 17.8738 63.3027 17.8738"
@@ -261,7 +269,7 @@ const W3Ecotech = () => {
                             </header>
 
                             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-primary">
+                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-75 bg-primary">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
                                             src="/img/dashboard.avif"
@@ -270,6 +278,7 @@ const W3Ecotech = () => {
                                             width="155"
                                             height="165"
                                             loading="lazy"
+                                            decoding="async"
                                         />
                                     </figure>
                                     <div>
@@ -280,7 +289,7 @@ const W3Ecotech = () => {
                                     </div>
                                 </article>
 
-                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-[300px] bg-black">
+                                <article className="flex flex-col px-4 py-10 rounded-lg gap-4 w-full md:max-w-75 bg-black">
                                     <figure className="w-[154.92px] h-[164.74px] mx-auto rounded-lg ring-4 ring-[#c1dbcf] relative overflow-hidden">
                                         <img
                                             src="/img/dashboard-2.avif"
@@ -289,6 +298,7 @@ const W3Ecotech = () => {
                                             width="155"
                                             height="165"
                                             loading="lazy"
+                                            decoding="async"
                                         />
                                     </figure>
                                     <div>
@@ -304,8 +314,8 @@ const W3Ecotech = () => {
                 </section>
 
                 <section className="bg-[#072416] relative overflow-hidden" aria-labelledby="cta-heading">
-                    <div className="absolute bottom-0 left-[200px] w-64 h-64 bg-[#BDFFED] rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2" aria-hidden="true"></div>
-                    <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
+                    <div className="absolute bottom-0 left-50 w-64 h-64 bg-[#BDFFED] rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2" aria-hidden="true"></div>
+                    <div className="absolute bottom-0 right-50 w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
 
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
                         <div className="max-w-4xl text-center mx-auto">

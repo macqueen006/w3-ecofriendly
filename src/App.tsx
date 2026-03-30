@@ -1,20 +1,22 @@
-import {Route, Routes, useLocation} from "react-router";
-import {AnimatePresence} from "framer-motion";
-import About from "./pages/About.tsx";
-import Impact from "./pages/Impact.tsx";
-import ContactUs from "./pages/ContactUs.tsx";
-import Home from "./pages/Home.tsx";
-import W3b2 from "./pages/W3b2.tsx";
-import W3ecotech from "./pages/W3ecotech.tsx";
-import transition from "./transition.tsx";
-import {MaintenancePage} from "./components/MaintenancePage.tsx";
-import {useState, useEffect} from "react";
+import { Route, Routes, useLocation } from "react-router";
+import { AnimatePresence } from "framer-motion";
+import { useState, useEffect, Suspense, lazy } from "react";
+import transition from "@/utils/transition";
+import { MaintenancePage } from "@/ui/maintenance";
+import { PageLoader } from "@/ui/pageloader";
 
-const TransitionHome = transition(Home);
-const TransitionAbout = transition(About);
-const TransitionW3b2 = transition(W3b2);
+const Home       = lazy(() => import("./pages/Home.tsx"));
+const About      = lazy(() => import("./pages/About.tsx"));
+const W3b2       = lazy(() => import("./pages/W3b2.tsx"));
+const W3ecotech  = lazy(() => import("./pages/W3ecotech.tsx"));
+const Impact     = lazy(() => import("./pages/Impact.tsx"));
+const ContactUs  = lazy(() => import("./pages/ContactUs.tsx"));
+
+const TransitionHome      = transition(Home);
+const TransitionAbout     = transition(About);
+const TransitionW3b2      = transition(W3b2);
 const TransitionW3ecotech = transition(W3ecotech);
-const TransitionImpact = transition(Impact);
+const TransitionImpact    = transition(Impact);
 const TransitionContactUs = transition(ContactUs);
 
 function App() {
@@ -35,25 +37,22 @@ function App() {
             });
     }, []);
 
-    if (isLoading) {
-        return <div></div>;
-    }
-
-    if (isMaintenanceMode) {
-        return <MaintenancePage />;
-    }
+    if (isLoading) return <PageLoader />;
+    if (isMaintenanceMode) return <MaintenancePage />;
 
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<TransitionHome/>}/>
-                <Route path="/about" element={<TransitionAbout/>}/>
-                <Route path="/w3-b2" element={<TransitionW3b2/>}/>
-                <Route path="/w3-ecotech" element={<TransitionW3ecotech/>}/>
-                <Route path="/impact" element={<TransitionImpact/>}/>
-                <Route path="/contact-us" element={<TransitionContactUs/>}/>
-            </Routes>
-        </AnimatePresence>
+        <Suspense fallback={<PageLoader />}>
+            <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/"           element={<TransitionHome />} />
+                    <Route path="/about"      element={<TransitionAbout />} />
+                    <Route path="/w3-b2"      element={<TransitionW3b2 />} />
+                    <Route path="/w3-ecotech" element={<TransitionW3ecotech />} />
+                    <Route path="/impact"     element={<TransitionImpact />} />
+                    <Route path="/contact-us" element={<TransitionContactUs />} />
+                </Routes>
+            </AnimatePresence>
+        </Suspense>
     );
 }
 

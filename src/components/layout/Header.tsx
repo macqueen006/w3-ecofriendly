@@ -84,12 +84,12 @@ export default function Header() {
             )}
 
             <header
-                className={`${isScrolled ? 'absolute' : 'fixed'} top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-10 w-full max-w-3xl mx-auto transition-all duration-300`}
+                className={`${isScrolled ? 'absolute' : 'fixed'} top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-20 w-full max-w-3xl mx-auto transition-all duration-300`}
                 role="banner"
             >
                 <nav
                     ref={menuRef}
-                    className={`relative bg-white max-w-[66rem] w-full bg-light-blue rounded-[28px] py-1 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto ${
+                    className={`relative bg-white max-w-264 w-full bg-light-blue rounded-[28px] py-1 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto ${
                         isScrolled ? 'shadow-lg' : ''
                     } transition-shadow duration-300`}
                     aria-label="Main navigation"
@@ -124,7 +124,7 @@ export default function Header() {
                             >
                                 {/* Hamburger Icon */}
                                 <svg
-                                    className={`${isMenuOpen ? 'hidden' : 'block'} flex-shrink-0 size-4`}
+                                    className={`${isMenuOpen ? 'hidden' : 'block'} shrink-0 size-4`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
@@ -143,7 +143,7 @@ export default function Header() {
 
                                 {/* Close Icon */}
                                 <svg
-                                    className={`${isMenuOpen ? 'block' : 'hidden'} flex-shrink-0 size-4`}
+                                    className={`${isMenuOpen ? 'block' : 'hidden'} shrink-0 size-4`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"

@@ -19,10 +19,24 @@ const Impact = () => {
 
             <main id="main-content">
                 <section
-                    className="pt-24 bg-[url('/img/impact-hero.avif')] min-h-screen md:min-h-[600px] lg:min-h-screen flex flex-col justify-center bg-cover bg-center bg-no-repeat"
+                    className="pt-24 relative min-h-screen md:min-h-150 lg:min-h-screen flex flex-col justify-center"
                     aria-labelledby="hero-heading"
                 >
-                    <div className="max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 relative flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
+                    <picture aria-hidden="true">
+                        <source srcSet="/img/impact-hero.avif" type="image/avif" />
+                        <img
+                            src="/img/impact-hero.avif"
+                            alt=""
+                            width={1440}
+                            height={900}
+                            fetchPriority="high"
+                            loading="eager"
+                            decoding="async"
+                            className="absolute inset-0 w-full h-full object-cover object-center"
+                            style={{ zIndex: 0 }}
+                        />
+                    </picture>
+                    <div className="relative z-10 max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
                         <div className="space-y-6 lg:space-y-10 w-full lg:w-1/2">
                             <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
                                 <span className="text-sm md:text-base font-medium text-white">Our Environmental Impact</span>
@@ -44,7 +58,7 @@ const Impact = () => {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2 flex flex-col md:flex-row md:flex-wrap lg:flex-col gap-4 md:justify-center lg:justify-start">
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -54,13 +68,14 @@ const Impact = () => {
                                             height={40}
                                             alt="Recycling icon"
                                             loading="eager"
+                                            decoding="async"
                                         />
                                     </div>
                                     <h2 className="font-bold text-xl">52,847</h2>
                                     <p className="text-sm">Electronics Recycled</p>
                                 </div>
                             </article>
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -70,13 +85,14 @@ const Impact = () => {
                                             height={40}
                                             alt="Certificate icon"
                                             loading="eager"
+                                            decoding="async"
                                         />
                                     </div>
                                     <h2 className="font-bold text-xl">56</h2>
                                     <p className="text-sm">Certificates Issued</p>
                                 </div>
                             </article>
-                            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-[200px] lg:w-auto mx-auto md:mx-0">
+                            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-auto mx-auto md:mx-0">
                                 <div className="hidden lg:flex flex-col items-center absolute -top-28 left-24" aria-hidden="true">
                                     <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
                                         <div className="bg-white/10 rounded-full w-10 h-10 sm:w-12 sm:h-12 absolute"></div>
@@ -99,6 +115,7 @@ const Impact = () => {
                                                 height={40}
                                                 alt="Metal recovery icon"
                                                 loading="eager"
+                                                decoding="async"
                                             />
                                         </div>
                                         <h2 className="font-bold text-xl">8.5T</h2>
@@ -125,6 +142,7 @@ const Impact = () => {
                                     src="/img/sparkle-white.avif"
                                     aria-hidden="true"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                                 <p className="text-sm md:text-base font-medium text-white">Why It Matters</p>
                             </div>
@@ -139,11 +157,12 @@ const Impact = () => {
                                     <figure className="aspect-square relative max-w-sm mx-auto">
                                         <img
                                             src="/img/impact-1.avif"
-                                            className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:right-0 lg:-rotate-[14deg]"
+                                            className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:right-0 lg:-rotate-14"
                                             alt="Environmental protection from toxic e-waste materials"
                                             loading="lazy"
                                             width="400"
                                             height="400"
+                                            decoding="async"
                                         />
                                     </figure>
                                     <div className="text-center text-white space-y-2 px-4">
@@ -163,6 +182,7 @@ const Impact = () => {
                                         loading="lazy"
                                         width="400"
                                         height="400"
+                                        decoding="async"
                                     />
                                 </figure>
                                 <div className="text-center text-white space-y-2 px-4">
@@ -181,6 +201,7 @@ const Impact = () => {
                                         loading="lazy"
                                         width="400"
                                         height="400"
+                                        decoding="async"
                                     />
                                 </figure>
                                 <div className="text-center text-white space-y-2 px-4">

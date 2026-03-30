@@ -56,6 +56,7 @@ export default function PartnersSection() {
                                 height="36"
                                 alt={partner.alt}
                                 loading="lazy"
+                                decoding="async"
                                 className={`w-8 h-8 sm:w-9 sm:h-9 ${partner.name === 'LAWMA' ? 'md:w-[100px]' : 'md:w-10'} md:h-10 flex-shrink-0 object-contain`}
                             />
                             <p className="text-sm sm:text-base font-medium text-neutral-700 text-center sm:text-left">

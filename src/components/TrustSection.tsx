@@ -1,9 +1,9 @@
 
 const TrustSection = () => {
     return (
-        <section className="py-[51px] bg-[#051C12] text-white">
-            <div className="max-w-[1252px] mx-auto space-y-[62px]">
-                <div className="flex flex-col items-center gap-6 justify-center max-w-[946px] mx-auto">
+        <section className="py-12.75 bg-[#051C12] text-white">
+            <div className="max-w-313 mx-auto space-y-15.5">
+                <div className="flex flex-col items-center gap-6 justify-center max-w-236.5 mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
                         <img src="/img/sparkle-white.avif" width="24" height="24" alt=""/>
                         <p className="text-sm sm:text-base">Why Trust W3 Eco friendly</p>
@@ -71,8 +71,8 @@ const TrustSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 w-full relative min-h-[374px]">
-                        <img src="/img/generated-5.avif" alt=""
+                    <div className="flex-1 w-full relative min-h-93.5">
+                        <img src="/img/generated-5.avif" alt="" aria-hidden="true"
                              loading="lazy" decoding="async" width="400" height="374"
                              className="object-cover absolute left-0 top-0 w-full h-full rounded-sm"/>
                     </div>

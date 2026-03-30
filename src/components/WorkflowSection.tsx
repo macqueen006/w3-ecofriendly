@@ -69,7 +69,7 @@ export default function WorkflowSection() {
                             } items-center justify-between gap-8`}
                         >
                             {/* Text Content */}
-                            <div className="w-full md:max-w-[538px] text-center md:text-left">
+                            <div className="w-full md:max-w-134.5 text-center md:text-left">
                                 <h3 className="text-2xl leading-tight font-semibold mb-3">
                                     {step.title}
                                 </h3>
@@ -84,6 +84,8 @@ export default function WorkflowSection() {
                                     src={step.image}
                                     width={316}
                                     height={410}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover"
                                     alt={step.title}
                                 />

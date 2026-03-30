@@ -74,6 +74,8 @@ const About = () => {
                                 className="absolute inset-0 w-full h-full object-cover block"
                                 alt="Modern e-waste recycling facility with advanced technology"
                                 loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
                                 width="400"
                                 height="400"
                             />
@@ -106,6 +108,7 @@ const About = () => {
                                     className="w-5 h-5 md:w-6 md:h-6"
                                     src="/img/sparkle-white.avif"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                                 <h2 id="story-heading" className="text-sm md:text-base text-white font-medium">Our Story</h2>
                             </header>
@@ -123,12 +126,13 @@ const About = () => {
                                     alt="W3 Eco-friendly team members working together"
                                     className="absolute inset-0 w-full h-full object-cover block"
                                     loading="lazy"
+                                    decoding="async"
                                     width="400"
                                     height="256"
                                 />
                             </figure>
 
-                            <div className="sm:h-[156px] w-full flex flex-col sm:justify-end">
+                            <div className="sm:h-39 w-full flex flex-col sm:justify-end">
                                 <blockquote className="bg-primary text-white rounded-lg p-2">
                                     We empower governments, agencies, recyclers, and businesses with cutting-edge technology
                                     driving transparency, efficiency, and measurable environmental impact.
@@ -154,6 +158,7 @@ const About = () => {
                                         className="w-5 h-5 sm:w-6 sm:h-6"
                                         src="/img/sparkle-white.avif"
                                         loading="lazy"
+                                        decoding="async"
                                     />
                                     <h3 className="text-sm sm:text-base text-white font-medium">Our Vision</h3>
                                 </header>
@@ -173,6 +178,7 @@ const About = () => {
                                         className="w-5 h-5 sm:w-6 sm:h-6"
                                         src="/img/sparkle-white.avif"
                                         loading="lazy"
+                                        decoding="async"
                                     />
                                     <h3 className="text-sm sm:text-base text-white font-medium">Our Mission</h3>
                                 </header>
@@ -190,7 +196,7 @@ const About = () => {
                     <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-6 py-10 px-4">
                         <header className="sm:col-span-2 sm:col-start-1 text-white space-y-6">
                             <h2 id="team-heading" className="font-semibold text-2xl">Our Team</h2>
-                            <p className="max-w-[274px]">
+                            <p className="max-w-68.5">
                                 Our team is led by an innovative Project Director and supported by strong regulatory backing, alongside professionals and expertise across environmental management, technology, compliance, and circular economy systems. Together, we are driven by a shared mission
                             </p>
                         </header>
@@ -203,6 +209,7 @@ const About = () => {
                                         alt={`Team member profile`}
                                         className="w-full aspect-square inline-block object-cover rounded-tl-lg rounded-tr-lg"
                                         loading="lazy"
+                                        decoding="async"
                                         width="300"
                                         height="300"
                                     />
@@ -219,8 +226,8 @@ const About = () => {
                 {/* CTA Section */}
                 <section className="bg-[#072416] relative overflow-hidden" aria-labelledby="cta-heading">
                     {/* Decorative elements */}
-                    <div className="absolute bottom-0 left-[200px] w-64 h-64 bg-[#BDFFED] rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2" aria-hidden="true"></div>
-                    <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
+                    <div className="absolute bottom-0 left-50 w-64 h-64 bg-[#BDFFED] rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2" aria-hidden="true"></div>
+                    <div className="absolute bottom-0 right-50 w-80 h-80 bg-[#00DB2C] rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2" aria-hidden="true"></div>
 
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
                         <div className="max-w-2xl text-center mx-auto">

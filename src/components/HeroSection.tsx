@@ -19,10 +19,24 @@ export default function HeroSection() {
 
     return (
         <section
-            className="bg-[url('/img/hero.avif')] bg-cover bg-center relative"
+            className="relative bg-primary-foreground"
             aria-labelledby="hero-heading"
         >
-            <div className="max-w-4xl mx-auto px-4 xl:px-0 pt-24 sm:pt-32 md:pt-40 space-y-6">
+            <picture aria-hidden="true">
+                <source srcSet="/img/hero.avif" type="image/avif" />
+                <img
+                    src="/img/hero.avif"
+                    alt=""
+                    width={1440}
+                    height={900}
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    style={{ zIndex: 0 }}
+                />
+            </picture>
+            <div className="relative z-10 max-w-4xl mx-auto px-4 xl:px-0 pt-24 sm:pt-32 md:pt-40 space-y-6">
                 {/* Main Heading - H1 for SEO */}
                 <h1
                     id="hero-heading"
@@ -57,7 +71,7 @@ export default function HeroSection() {
             </div>
 
             {/* Statistics Section */}
-            <div className="px-4 xl:px-0 bg-gradient-to-bl from-navy-blue to-neutral-950 mt-30">
+            <div className="px-4 xl:px-0 bg-linear-to-bl from-navy-blue to-neutral-950 mt-30">
                 <div className="mx-auto max-w-5xl">
                     <div className="p-4 rounded-xl">
                         <div
