@@ -52,10 +52,10 @@ const ContactUs = () => {
                 <main id="main-content">
                     {/* Contact Form Section */}
                     <section
-                        className="max-w-[36rem] mx-auto pt-24 space-y-6 p-4"
+                        className="max-w-xl mx-auto pt-24 space-y-6 p-4"
                         aria-labelledby="contact-form-heading"
                     >
-                        <article className="p-4 sm:p-6 lg:p-8 flex flex-col gap-6 bg-white/40 rounded-[20px]">
+                        <article className="p-4 sm:p-6 lg:p-8 flex flex-col gap-6 bg-white/40 rounded-4xl">
                             <header className="space-y-3">
                                 <h1 id="contact-form-heading" className="text-lg font-semibold text-center px-4">
                                     Get In Touch with Our Team
@@ -66,12 +66,12 @@ const ContactUs = () => {
                             </header>
 
                             <form
-                                className="max-w-[685px] w-full mx-auto space-y-6"
+                                className="max-w-171.25 w-full mx-auto space-y-6"
                                 onSubmit={handleSubmit}
                                 aria-label="Contact form"
                             >
                                 {/* Name Field */}
-                                <div className="w-full space-y-[14px]">
+                                <div className="w-full space-y-3.5">
                                     <label
                                         htmlFor="contact-name"
                                         className="block text-sm font-medium mb-2"
@@ -93,7 +93,7 @@ const ContactUs = () => {
                                 </div>
 
                                 {/* Email Field */}
-                                <div className="w-full space-y-[14px]">
+                                <div className="w-full space-y-3.5">
                                     <label
                                         htmlFor="contact-email"
                                         className="block text-sm font-medium mb-2"
@@ -115,7 +115,7 @@ const ContactUs = () => {
                                 </div>
 
                                 {/* Company Field */}
-                                <div className="w-full space-y-[14px]">
+                                <div className="w-full space-y-3.5">
                                     <label
                                         htmlFor="contact-company"
                                         className="block text-sm font-medium mb-2"
@@ -135,7 +135,7 @@ const ContactUs = () => {
                                 </div>
 
                                 {/* Message Field */}
-                                <div className="w-full space-y-[14px]">
+                                <div className="w-full space-y-3.5">
                                     <label
                                         htmlFor="contact-message"
                                         className="block text-sm font-medium mb-2"
@@ -162,7 +162,7 @@ const ContactUs = () => {
                                 </div>
 
                                 {/* Submit Button */}
-                                <div className="max-w-[472px] mx-auto pt-2">
+                                <div className="max-w-118 mx-auto pt-2">
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
@@ -204,7 +204,7 @@ const ContactUs = () => {
 
                     {/* Contact Information Section */}
                     <section
-                        className="max-w-[400px] mx-auto space-y-6 p-4 sm:p-6"
+                        className="max-w-100 mx-auto space-y-6 p-4 sm:p-6"
                         aria-labelledby="visit-heading"
                     >
                         <h2 id="visit-heading" className="font-bold text-2xl text-center">
