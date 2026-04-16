@@ -1,10 +1,10 @@
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
-import { visualizer } from "rollup-plugin-visualizer";
+import {defineConfig} from "vite";
+import {visualizer} from "rollup-plugin-visualizer";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({mode}) => ({
     plugins: [
         react(),
         tailwindcss(),
@@ -15,18 +15,20 @@ export default defineConfig(({ mode }) => ({
             filename: "reports/bundle-stats.html",
         }),
     ].filter(Boolean),
-
+    server: {
+        historyApiFallback: true,
+    },
     resolve: {
         alias: {
-            "@":          path.resolve(__dirname, "./src"),
-            "@ui":        path.resolve(__dirname, "./src/ui"),
-            "@hooks":     path.resolve(__dirname, "./src/hooks"),
-            "@utils":     path.resolve(__dirname, "./src/utils"),
-            "@services":  path.resolve(__dirname, "./src/services"),
-            "@features":  path.resolve(__dirname, "./src/features"),
+            "@": path.resolve(__dirname, "./src"),
+            "@ui": path.resolve(__dirname, "./src/ui"),
+            "@hooks": path.resolve(__dirname, "./src/hooks"),
+            "@utils": path.resolve(__dirname, "./src/utils"),
+            "@services": path.resolve(__dirname, "./src/services"),
+            "@features": path.resolve(__dirname, "./src/features"),
             "@constants": path.resolve(__dirname, "./src/constants"),
-            "@store":     path.resolve(__dirname, "./src/store"),
-            "@layouts":   path.resolve(__dirname, "./src/layouts"),
+            "@store": path.resolve(__dirname, "./src/store"),
+            "@layouts": path.resolve(__dirname, "./src/layouts"),
         },
     },
 
