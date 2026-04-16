@@ -2,6 +2,7 @@ import Header from "../components/layout/Header.tsx";
 import Footer from "../components/layout/Footer.tsx";
 import SEO from '../components/SEO';
 import {ImpactPageSchema} from "../components/StructuredData.tsx";
+import {Link} from "react-router";
 
 const Impact = () => {
     return (
@@ -13,9 +14,9 @@ const Impact = () => {
                 url="/impact"
                 image="https:/w3eco-friendly.com/impact-hero.avif"
             />
-            <ImpactPageSchema />
+            <ImpactPageSchema/>
 
-            <Header />
+            <Header/>
 
             <main id="main-content">
                 <section
@@ -23,7 +24,7 @@ const Impact = () => {
                     aria-labelledby="hero-heading"
                 >
                     <picture aria-hidden="true">
-                        <source srcSet="/img/impact-hero.avif" type="image/avif" />
+                        <source srcSet="/img/impact-hero.avif" type="image/avif"/>
                         <img
                             src="/img/impact-hero.avif"
                             alt=""
@@ -33,19 +34,23 @@ const Impact = () => {
                             loading="eager"
                             decoding="async"
                             className="absolute inset-0 w-full h-full object-cover object-center"
-                            style={{ zIndex: 0 }}
+                            style={{zIndex: 0}}
                         />
                     </picture>
-                    <div className="relative z-10 max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
+                    <div
+                        className="relative z-10 max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
                         <div className="space-y-6 lg:space-y-10 w-full lg:w-1/2">
-                            <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
-                                <span className="text-sm md:text-base font-medium text-white">Our Environmental Impact</span>
+                            <div
+                                className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
+                                <span
+                                    className="text-sm md:text-base font-medium text-white">Our Environmental Impact</span>
                             </div>
                             <h1 id="hero-heading" className="text-white font-bold text-3xl sm:text-4xl lg:text-5xl">
                                 Measurable Impact. Verifiable Outcomes.
                             </h1>
                             <p className="text-white text-base sm:text-lg max-w-xl">
-                                W3 Eco-Friendly Ltd delivers measurable environmental and social value by enabling responsible electronic waste management across Nigeria.
+                                W3 Eco-Friendly Ltd delivers measurable environmental and social value by enabling
+                                responsible electronic waste management across Nigeria.
                             </p>
                             <div className="flex flex-col justify-start items-center gap-2 sm:flex-row sm:gap-4">
                                 <a
@@ -57,8 +62,10 @@ const Impact = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="w-full lg:w-1/2 flex flex-col md:flex-row md:flex-wrap lg:flex-col gap-4 md:justify-center lg:justify-start">
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                        <div
+                            className="w-full lg:w-1/2 flex flex-col md:flex-row md:flex-wrap lg:flex-col gap-4 md:justify-center lg:justify-start">
+                            <article
+                                className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -75,7 +82,8 @@ const Impact = () => {
                                     <p className="text-sm">Electronics Recycled</p>
                                 </div>
                             </article>
-                            <article className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                            <article
+                                className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                 <div className="flex flex-col gap-1 items-center text-white">
                                     <div>
                                         <img
@@ -93,10 +101,14 @@ const Impact = () => {
                                 </div>
                             </article>
                             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-auto mx-auto md:mx-0">
-                                <div className="hidden lg:flex flex-col items-center absolute -top-28 left-24" aria-hidden="true">
-                                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
-                                        <div className="bg-white/10 rounded-full w-10 h-10 sm:w-12 sm:h-12 absolute"></div>
-                                        <div className="bg-white/15 rounded-full w-8 h-8 sm:w-10 sm:h-10 absolute"></div>
+                                <div className="hidden lg:flex flex-col items-center absolute -top-28 left-24"
+                                     aria-hidden="true">
+                                    <div
+                                        className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                                        <div
+                                            className="bg-white/10 rounded-full w-10 h-10 sm:w-12 sm:h-12 absolute"></div>
+                                        <div
+                                            className="bg-white/15 rounded-full w-8 h-8 sm:w-10 sm:h-10 absolute"></div>
                                         <div className="bg-white/20 rounded-full w-6 h-6 sm:w-8 sm:h-8 absolute"></div>
                                         <div className="bg-white/25 rounded-full w-4 h-4 sm:w-6 sm:h-6 absolute"></div>
                                     </div>
@@ -105,7 +117,8 @@ const Impact = () => {
                                     </div>
                                 </div>
 
-                                <article className="w-full lg:w-64 h-36 rounded-lg bg-[url('/img/card-frame-3.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
+                                <article
+                                    className="w-full lg:w-64 h-36 rounded-lg bg-[url('/img/card-frame-3.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
                                     <div className="flex flex-col gap-1 items-center text-white">
                                         <div>
                                             <img
@@ -133,7 +146,8 @@ const Impact = () => {
                 >
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto space-y-8">
                         <div className="flex flex-col gap-4 items-center w-full">
-                            <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
+                            <div
+                                className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
                                 <img
                                     width="44"
                                     height="44"
@@ -146,7 +160,8 @@ const Impact = () => {
                                 />
                                 <p className="text-sm md:text-base font-medium text-white">Why It Matters</p>
                             </div>
-                            <h2 id="why-matters-heading" className="text-white/70 font-medium text-xl sm:text-2xl md:text-3xl text-center max-w-xl px-4">
+                            <h2 id="why-matters-heading"
+                                className="text-white/70 font-medium text-xl sm:text-2xl md:text-3xl text-center max-w-xl px-4">
                                 Every device we recycle contributes to a cleaner environment.
                             </h2>
                         </div>
@@ -222,28 +237,30 @@ const Impact = () => {
                     <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
                         <div className="max-w-2xl text-center mx-auto">
                             <div className="mb-5 space-y-4">
-                                <h2 id="partners-heading" className="text-xl font-medium md:text-2xl lg:text-4xl md:leading-tight text-white">
+                                <h2 id="partners-heading"
+                                    className="text-xl font-medium md:text-2xl lg:text-4xl md:leading-tight text-white">
                                     Trusted By Leading Organizations
                                 </h2>
                                 <p className="text-white/70">
                                     Partnering with businesses committed to sustainability
                                 </p>
                             </div>
-                            <div className="mt-5 lg:mt-8 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-4">
-                                <a
+                            <div
+                                className="mt-5 lg:mt-8 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-4">
+                                <Link
                                     className="w-full sm:w-auto whitespace-nowrap py-3 px-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-primary text-white hover:bg-primary/40 focus:outline-hidden focus:bg-[#274034] disabled:opacity-50 disabled:pointer-events-none"
-                                    href="/about"
+                                    to="/about"
                                     aria-label="Learn more about our partner organizations"
                                 >
                                     Learn More
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </section>
             </main>
 
-            <Footer />
+            <Footer/>
         </>
     );
 };

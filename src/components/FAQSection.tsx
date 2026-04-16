@@ -31,8 +31,8 @@ const FAQSection = () => {
     };
 
     return (
-        <section className="py-10 sm:py-12 md:py-14 lg:py-[57px] px-4 sm:px-6">
-            <div className="max-w-[1234px] mx-auto">
+        <section className="py-10 sm:py-12 md:py-14 lg:py-14.25 px-4 sm:px-6">
+            <div className="max-w-308.5 mx-auto">
                 <div className="space-y-12">
                     {/* Header */}
                     <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 justify-center max-w-4xl mx-auto">
@@ -46,7 +46,7 @@ const FAQSection = () => {
                     </div>
 
                     {/* FAQ Items */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-x-12 lg:gap-y-[44px] lg:items-start max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-x-12 lg:gap-y-11 lg:items-start max-w-5xl mx-auto">
                         {faqs.map((faq, index) => (
                             <div
                                 key={index}
@@ -60,7 +60,7 @@ const FAQSection = () => {
                                     className="w-full flex gap-4 sm:gap-5 md:gap-6 items-start justify-start text-left group focus:outline-none focus:ring-2 focus:ring-[#064E3B]/20 rounded-md p-1 -m-1"
                                     aria-expanded={openIndex === index}
                                 >
-                                    <div className="flex-shrink-0 mt-1 transition-transform duration-300">
+                                    <div className="shrink-0 mt-1 transition-transform duration-300">
                                         {openIndex === index ? (
                                             <svg
                                                 width="20"

@@ -1,3 +1,5 @@
+import {Link} from "react-router";
+
 const Footer = () => {
     return (
         <footer className="bg-[#072416]" role="contentinfo" aria-label="Site footer">
@@ -16,20 +18,31 @@ const Footer = () => {
                             <span>Quick Links</span>
                         </h2>
                         <ul className="space-y-1 sm:space-y-0.75">
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Home</a>
+                            <li>
+                                <Link to="/"
+                                      className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Home
+                                </Link>
                             </li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">About</a>
+                            <li>
+                                <Link to="/about" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    About
+                                </Link>
                             </li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">W3
-                                Ecotech</a></li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">W3
-                                B2b</a></li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Impact</a>
+                            <li>
+                                <Link to="/w3-ecotech" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    W3 Ecotech
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/w3-b2" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    W3 B2b
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/impact" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Impact
+                                </Link>
                             </li>
                         </ul>
                     </nav>
@@ -46,24 +59,33 @@ const Footer = () => {
                             <span>Support</span>
                         </h2>
                         <ul className="space-y-1 sm:space-y-0.75">
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Help
-                                Center</a></li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">FAQS</a>
+                            <li>
+                                <Link to="#" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Help Center
+                                </Link>
                             </li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Contact
-                                Us</a></li>
-                            <li><a href="#"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Privacy
-                                & Terms</a></li>
+                            <li>
+                                <Link to="#" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    FAQS
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/contact-us" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Contact Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="#" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Privacy & Terms
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Social Media */}
                     <div className="text-white space-y-3 sm:space-y-1">
-                        <h2 className="text-lg sm:text-xl font-medium leading-7.5 flex gap-2.5 items-center justify-start" id="social-heading" >
+                        <h2 className="text-lg sm:text-xl font-medium leading-7.5 flex gap-2.5 items-center justify-start"
+                            id="social-heading">
                             <svg width="17" height="21" viewBox="0 0 17 21" fill="none"
                                  xmlns="http://www.w3.org/2000/svg" className="shrink-0" aria-hidden="true">
                                 <path
@@ -73,50 +95,65 @@ const Footer = () => {
                             <span>Social Media</span>
                         </h2>
                         <ul className="space-y-1 sm:space-y-0.75">
-                            <li><a href="#"
+                            <li>
+                                <Link to="#"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    aria-label="follow us on Instagram"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Instagram</a>
+                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Instagram
+                                </Link>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <Link to="#"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    aria-label="follow us on Facebook"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Facebook</a>
+                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Facebook
+                                </Link>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <Link to="#"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    aria-label="follow us on X (Formerly Twitter)"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">X
-                                (Formerly Twitter)</a></li>
-                            <li><a href="#"
+                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    X (Formerly Twitter)
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="#"
                                    target="_blank"
                                    rel="noopener noreferrer"
                                    aria-label="follow us on TokTok"
-                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">Tik
-                                Tok</a></li>
+                                   className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                    Tik Tok
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Mission Statement */}
                     <div className="text-white">
                         <p className="text-sm sm:text-base leading-relaxed font-nunito-sans">
-                            Supporting responsible technology lifecycle management through secure recycling, traceability, and verified downstream recovery.
+                            Supporting responsible technology lifecycle management through secure recycling,
+                            traceability, and verified downstream recovery.
                         </p>
                     </div>
                 </div>
 
                 {/* Brand Section */}
                 <div className="hidden xl:block">
-                    <div className="text-[#CCFFE1] text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center leading-tight sm:leading-normal lg:leading-[249.1px] wrap-break-word">
+                    <div
+                        className="text-[#CCFFE1] text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center leading-tight sm:leading-normal lg:leading-[249.1px] wrap-break-word">
                         W3 Eco friendly
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-4 sm:pt-2.5 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-white/80 text-center sm:text-left border-t border-white/10">
+                <div
+                    className="pt-4 sm:pt-2.5 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-white/80 text-center sm:text-left border-t border-white/10">
                       <span className="text-xs sm:text-sm leading-6">
                         © W3 Ecofriendly Nig Ltd 2025
                       </span>

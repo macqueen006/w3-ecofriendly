@@ -1,3 +1,5 @@
+import {Link} from "react-router";
+
 export default function HeroSection() {
     const stats = [
         {
@@ -53,20 +55,20 @@ export default function HeroSection() {
 
                 {/* Call-to-Action Buttons */}
                 <div className="text-white text-lg text-center max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
-                    <a
-                        href="/contact-us"
+                    <Link
+                        to="/contact-us"
                         className="w-full sm:w-auto px-6 py-3 bg-[#064E3B] text-white text-base font-medium rounded-lg hover:bg-[#053527] transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
                         aria-label="Contact our e-waste management experts"
                     >
                         Contact Expert
-                    </a>
-                    <a
-                        href="/contact-us#pickup"
+                    </Link>
+                    <Link
+                        to="/contact-us"
                         className="w-full sm:w-auto px-6 py-3 bg-white text-[#064E3B] text-base font-medium rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#064E3B]/50"
                         aria-label="Request e-waste pickup service"
                     >
                         Request Pickup
-                    </a>
+                    </Link>
                 </div>
             </div>
 

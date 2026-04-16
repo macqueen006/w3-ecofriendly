@@ -20,11 +20,11 @@ const Newsletter = () => {
 
     return (
         <section className="bg-[#072416] py-10 px-4 relative overflow-hidden">
-            <div className="absolute bottom-0 left-[200px] w-64 h-64 bg-[#BDFFED]/50 rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-[200px] w-80 h-80 bg-[#00DB2C]/30 rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2"></div>
-            <div className="max-w-[871px] mx-auto space-y-4 text-white text-center">
+            <div className="absolute bottom-0 left-50 w-64 h-64 bg-[#BDFFED]/50 rounded-full opacity-20 blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+            <div className="absolute bottom-0 right-50 w-80 h-80 bg-[#00DB2C]/30 rounded-full opacity-15 blur-3xl translate-x-1/3 translate-y-1/2"></div>
+            <div className="max-w-217.75 mx-auto space-y-4 text-white text-center">
                 {/* Heading */}
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight sm:leading-tight md:leading-tight lg:leading-[96px] font-bold">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight sm:leading-tight md:leading-tight lg:leading-24 font-bold">
                     Newsletter
                 </h2>
 
@@ -38,7 +38,7 @@ const Newsletter = () => {
                                 placeholder="Enter your Mail Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                onKeyPress={handleKeyPress}
+                                onKeyDown={handleKeyPress}
                                 className="bg-transparent w-full text-white text-base leading-relaxed placeholder:text-white/60 focus:outline-none"
                             />
                         </div>
@@ -57,7 +57,7 @@ const Newsletter = () => {
                             placeholder="Enter your Mail Address"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            onKeyPress={handleKeyPress}
+                            onKeyDown={handleKeyPress}
                             className="bg-transparent rounded-full flex-1 px-5 py-1.5 text-white text-base leading-relaxed placeholder:text-white/60 focus:outline-none transition-all"
                         />
                         <button type="button" className="py-2 px-6 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-[#3d8c77] text-white hover:bg-primary focus:outline-hidden focus:bg-primary disabled:opacity-50 disabled:pointer-events-none">

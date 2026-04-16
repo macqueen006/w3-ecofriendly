@@ -47,7 +47,7 @@ export default function ServicesSection() {
     ];
 
     const ArrowIcon = () => (
-        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0">
+        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 shrink-0">
             <path d="M13.7063 8.6041C14.0969 8.21348 14.0969 7.5791 13.7063 7.18848L8.70625 2.18848C8.31563 1.79785 7.68125 1.79785 7.29063 2.18848C6.9 2.5791 6.9 3.21348 7.29063 3.6041L10.5875 6.89785H1C0.446875 6.89785 0 7.34473 0 7.89785C0 8.45098 0.446875 8.89785 1 8.89785H10.5844L7.29375 12.1916C6.90312 12.5822 6.90312 13.2166 7.29375 13.6072C7.68437 13.9979 8.31875 13.9979 8.70938 13.6072L13.7094 8.60723L13.7063 8.6041Z" fill="#064E3B"/>
         </svg>
     );
@@ -56,7 +56,7 @@ export default function ServicesSection() {
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="py-10 space-y-10">
                 {/* Header */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-[946px] mx-auto">
+                <div className="flex flex-col items-center gap-4 md:gap-6 justify-center max-w-236.5 mx-auto">
                     <div className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6] rounded-full">
                         <img src="/img/sparkle.avif" width="24" height="24" alt="" className="w-5 h-5 md:w-6 md:h-6" />
                         <p className="text-sm md:text-base font-medium">Our Services</p>
@@ -73,7 +73,7 @@ export default function ServicesSection() {
                         {services.slice(0, 2).map((service, index) => (
                             <div key={index} className="flex flex-col sm:flex-row items-start gap-4">
                                 {/* Number - Hidden on mobile, visible on larger screens */}
-                                <div className="hidden sm:block min-w-[80px] lg:min-w-[120px]">
+                                <div className="hidden sm:block min-w-20 lg:min-w-30">
                                     <p className="text-5xl md:text-6xl lg:text-[96px] leading-none font-bold text-[#D7D7D7]">
                                         {service.number}
                                     </p>
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                         {services.slice(2, 4).map((service, index) => (
                             <div key={index} className="flex flex-col sm:flex-row items-start gap-4">
                                 {/* Number - Hidden on mobile */}
-                                <div className="hidden sm:block min-w-[80px] lg:min-w-[120px]">
+                                <div className="hidden sm:block min-w-20 lg:min-w-30">
                                     <p className="text-5xl md:text-6xl lg:text-[96px] leading-none font-bold text-[#D7D7D7]">
                                         {service.number}
                                     </p>

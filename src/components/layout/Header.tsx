@@ -67,12 +67,12 @@ export default function Header() {
     return (
         <>
             {/* Skip to main content - Accessibility */}
-            <a
-                href="#main-content"
+            <Link
+                to="#main-content"
                 className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md"
             >
                 Skip to main content
-            </a>
+            </Link>
 
             {/* Overlay - only visible on mobile when menu is open */}
             {isMenuOpen && (
@@ -197,26 +197,6 @@ export default function Header() {
                                     </li>
                                 );
                             })}
-
-                            {/* User Profile */}
-                            {/*<li className="flex justify-start md:justify-center items-center py-2 md:py-0">
-                                <Link
-                                    className="group inline-flex items-center rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 border border-primary hover:border-opacity-70 transition-all"
-                                    to="/profile"
-                                    onClick={closeMenu}
-                                    aria-label="View user profile"
-                                    title="Go to your profile"
-                                >
-                                    <img
-                                        src="/img/user.avif"
-                                        className="w-10 h-10 inline-block object-cover rounded-full"
-                                        width="40"
-                                        height="40"
-                                        alt="User profile"
-                                        loading="lazy"
-                                    />
-                                </Link>
-                            </li>*/}
                         </ul>
                     </div>
                 </nav>
