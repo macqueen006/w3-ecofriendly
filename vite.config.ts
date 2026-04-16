@@ -15,9 +15,7 @@ export default defineConfig(({mode}) => ({
             filename: "reports/bundle-stats.html",
         }),
     ].filter(Boolean),
-    server: {
-        historyApiFallback: true,
-    },
+
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
