@@ -30,7 +30,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/w3-ecotech" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
+                                <Link to="https://w3ecotech.com" target="_blank" className="text-sm sm:text-base leading-6 hover:text-[#CCFFE1] transition-colors">
                                     W3 Ecotech
                                 </Link>
                             </li>

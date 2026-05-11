@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from "react-router";
+import {useState, useEffect, useRef} from 'react';
+import {Link, useLocation} from "react-router";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,12 +56,12 @@ export default function Header() {
     }, [isMenuOpen]);
 
     const navLinks = [
-        { name: 'Home', path: '/', description: 'Return to homepage' },
-        { name: 'About', path: '/about', description: 'Learn about our mission and team' },
-        { name: 'W3 B2B', path: '/w3-b2', description: 'Business to business e-waste solutions' },
-        { name: 'W3 Ecotech', path: '/w3-ecotech', description: 'Technology-driven recycling platform' },
-        { name: 'Impact', path: '/impact', description: 'View our environmental impact' },
-        { name: 'Contact Us', path: '/contact-us', description: 'Get in touch with our team' }
+        {name: 'Home', path: '/', description: 'Return to homepage'},
+        {name: 'About', path: '/about', description: 'Learn about our mission and team'},
+        {name: 'W3 B2B', path: '/w3-b2', description: 'Business to business e-waste solutions'},
+        {name: 'W3 Ecotech', path: 'https://w3ecotech.com', description: 'Technology-driven recycling platform'},
+        {name: 'Impact', path: '/impact', description: 'View our environmental impact'},
+        {name: 'Contact Us', path: '/contact-us', description: 'Get in touch with our team'}
     ];
 
     return (
@@ -172,28 +172,42 @@ export default function Header() {
                         <ul className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
                             {navLinks.map((link, index) => {
                                 const isActive = location.pathname === link.path;
+                                const isExternal = link.path.startsWith('http');
+                                const className = `text-sm md:py-4 rounded transition-colors relative block ${
+                                    isActive
+                                        ? 'text-primary font-semibold'
+                                        : 'text-black hover:text-primary'
+                                }`;
+
                                 return (
                                     <li key={index}>
-                                        <Link
-                                            className={`text-sm md:py-4 rounded transition-colors relative block ${
-                                                isActive
-                                                    ? 'text-primary font-semibold'
-                                                    : 'text-black hover:text-primary'
-                                            }`}
-                                            to={link.path}
-                                            aria-current={isActive ? 'page' : undefined}
-                                            onClick={closeMenu}
-                                            title={link.description}
-                                        >
-                                            {link.name}
-                                            {/* Active indicator underline */}
-                                            {isActive && (
-                                                <span
-                                                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary hidden md:block"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                        </Link>
+                                        {isExternal ? (
+                                            <a className={className}
+                                               href={link.path}
+                                               target="_blank"
+                                               rel="noopener noreferrer"
+                                               title={link.description}
+                                               onClick={closeMenu}
+                                            >
+                                                {link.name}
+                                            </a>
+                                        ) : (
+                                            <Link className={className}
+                                                  to={link.path}
+                                                  aria-current={isActive ? 'page' : undefined}
+                                                  onClick={closeMenu}
+                                                  title={link.description}
+                                            >
+                                                {link.name}
+                                                {/* Active indicator underline */}
+                                                {isActive && (
+                                                    <span
+                                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary hidden md:block"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                            </Link>
+                                        )}
                                     </li>
                                 );
                             })}
