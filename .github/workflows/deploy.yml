@@ -25,6 +25,16 @@ jobs:
       - name: Build React app
         run: npm run build
 
+      - name: Create api env file
+        run: |
+          mkdir -p dist/api
+          cat > dist/api/.env << 'EOF'
+          RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM=W3 Eco Friendly <noreply@w3eco-friendly.com>
+          RESEND_TO=w3@w3eco-friendly.com
+          EOF
+          echo "api/.env created for deploy"
+
       - name: Deploy to TrueHost via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
