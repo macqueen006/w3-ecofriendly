@@ -8,7 +8,7 @@ export const siteConfig = {
   logo: "https://w3eco-friendly.com/img/logo.avif",
   ogImage: "https://w3eco-friendly.com/img/hero.avif",
   contact: {
-    email: "W3@Ecofriendly.com",
+    email: "w3@w3eco-friendly.com",
     emailSecondary: "info@w3eco-friendly.com",
     phoneDisplay: "+234 807 787 5562",
     phoneHref: "+2348077875562",

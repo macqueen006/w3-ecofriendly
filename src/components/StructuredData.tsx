@@ -138,7 +138,7 @@ export const ContactPageSchema = () => {
                 "@type": "ContactPoint",
                 "telephone": "+234-807-787-5562",
                 "contactType": "Customer Service",
-                "email": "W3@Ecofriendly.com",
+                "email": "w3@w3eco-friendly.com",
                 "areaServed": "NG",
                 "availableLanguage": ["English"],
                 "hoursAvailable": {

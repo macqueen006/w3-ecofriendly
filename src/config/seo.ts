@@ -41,7 +41,7 @@ export const seoConfig: Record<string, SeoEntry> = {
   "/contact-us": {
     title: "Contact Us - Request an E-Waste Pickup",
     description:
-      "Request an e-waste pickup, ask about secure data destruction or compliance certification. W3 Eco Friendly Ltd, Ikorodu, Lagos - W3@Ecofriendly.com - +234 807 787 5562.",
+      "Request an e-waste pickup, ask about secure data destruction or compliance certification. W3 Eco Friendly Ltd, Ikorodu, Lagos - w3@w3eco-friendly.com - +234 807 787 5562.",
     url: "/contact-us",
   },
 };

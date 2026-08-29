@@ -138,7 +138,7 @@ function env_str(string $key, string $fallback = ''): string
 
 $resendApiKey = env_str('RESEND_API_KEY', '');
 $resendFrom = env_str('RESEND_FROM', 'W3 Eco Friendly <noreply@w3eco-friendly.com>');
-$resendTo = env_str('RESEND_TO', 'W3@Ecofriendly.com');
+$resendTo = env_str('RESEND_TO', 'w3@w3eco-friendly.com');
 $resendToSecondary = env_str('RESEND_TO_SECONDARY', '');
 $siteUrl = env_str('SITE_URL', 'https://w3eco-friendly.com');
 
@@ -174,7 +174,7 @@ if ($resendApiKey === '') {
     http_response_code(503);
     echo json_encode([
         'ok' => false,
-        'error' => 'Email service is not configured yet. Please contact us directly at W3@Ecofriendly.com or +234 807 787 5562.',
+        'error' => 'Email service is not configured yet. Please contact us directly at w3@w3eco-friendly.com or +234 807 787 5562.',
         'code' => 'SERVICE_NOT_CONFIGURED',
     ]);
     exit;
