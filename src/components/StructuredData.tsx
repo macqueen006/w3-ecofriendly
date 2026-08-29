@@ -239,66 +239,21 @@ export const ImpactPageSchema = () => {
     );
 };
 
-export const W3EcotechSchema = () => {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "W3 EcoTech - Digital E-Waste Management Platform",
-        "description": "Environmental technology platform for waste management, recycling, and circular-economy innovation",
-        "brand": {
-            "@type": "Organization",
-            "name": "W3 Eco Friendly Ltd"
-        },
-        "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "NGN",
-            "offerCount": "4",
-            "offers": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "TraceWaste",
-                        "description": "Track and monitor waste flow with real-time analytics and comprehensive reporting"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Surveillance Portal",
-                        "description": "Compliance monitoring with advanced surveillance and reporting tools"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "API Integration",
-                        "description": "Integrate waste data and workflows seamlessly into your existing systems"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Metal Services",
-                        "description": "Access to metal markets worldwide with global trading network"
-                    }
-                }
-            ]
-        },
-        "provider": {
-            "@type": "Organization",
-            "name": "W3 Eco Friendly Ltd",
-            "url": "https://w3eco-friendly.com"
-        }
-    };
-
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-    );
+export const WebSiteSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "W3 Eco Friendly Ltd",
+    url: "https://w3eco-friendly.com",
+    inLanguage: "en-NG",
+    publisher: {
+      "@type": "Organization",
+      name: "W3 Eco Friendly Ltd",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://w3eco-friendly.com/img/logo.avif",
+      },
+    },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };

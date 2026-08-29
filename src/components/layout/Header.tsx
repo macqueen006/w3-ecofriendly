@@ -1,220 +1,196 @@
-import {useState, useEffect, useRef} from 'react';
-import {Link, useLocation} from "react-router";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router";
+import { primaryNav } from "@/config/navigation";
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const menuRef = useRef<HTMLElement>(null);
-    const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const menuRef = useRef<HTMLElement>(null);
+  const location = useLocation();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
     };
+    if (isMenuOpen) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isMenuOpen]);
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
     };
+  }, [isMenuOpen]);
 
-    // Handle scroll effect
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
+  // Close mobile menu when route changes
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    closeMenu();
+  }, [location.pathname]);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  return (
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to main content
+      </a>
 
-    // Handle click outside to close menu
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                closeMenu();
-            }
-        };
+      {isMenuOpen && (
+        <button
+          type="button"
+          aria-label="Close navigation menu"
+          className="fixed inset-0 z-30 bg-black/40 backdrop-blur-sm md:hidden"
+          onClick={closeMenu}
+        />
+      )}
 
-        if (isMenuOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        }
+      <header
+        className={`fixed inset-x-0 top-0 z-40 border-b transition-colors duration-200 ${
+          isScrolled
+            ? "border-black/10 bg-white/95 backdrop-blur-md shadow-sm"
+            : "border-transparent bg-white/80 backdrop-blur-md"
+        }`}
+        role="banner"
+      >
+        <nav
+          ref={menuRef}
+          className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
+          aria-label="Main navigation"
+        >
+          <Link
+            to="/"
+            className="flex shrink-0 items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            aria-label="W3 Eco Friendly - Home"
+          >
+            <img
+              src="/img/logo.avif"
+              alt="W3 Eco Friendly logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
+              loading="eager"
+            />
+            <span className="hidden text-sm font-semibold tracking-tight text-zinc-900 sm:inline">
+              W3 Eco Friendly
+            </span>
+          </Link>
 
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isMenuOpen]);
+          {/* Desktop nav */}
+          <ul className="hidden items-center gap-1 md:flex" role="list">
+            {primaryNav.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                      isActive
+                        ? "bg-zinc-900 text-white"
+                        : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-    // Prevent body scroll when menu is open on mobile
-    useEffect(() => {
-        if (isMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, [isMenuOpen]);
-
-    const navLinks = [
-        {name: 'Home', path: '/', description: 'Return to homepage'},
-        {name: 'About', path: '/about', description: 'Learn about our mission and team'},
-        {name: 'W3 B2B', path: '/w3-b2', description: 'Business to business e-waste solutions'},
-        {name: 'W3 Ecotech', path: 'https://w3ecotech.com', description: 'Technology-driven recycling platform'},
-        {name: 'Impact', path: '/impact', description: 'View our environmental impact'},
-        {name: 'Contact Us', path: '/contact-us', description: 'Get in touch with our team'}
-    ];
-
-    return (
-        <>
-            {/* Skip to main content - Accessibility */}
+          <div className="hidden items-center gap-3 md:flex">
             <Link
-                to="#main-content"
-                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md"
+              to="/contact-us"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-                Skip to main content
+              Request Pickup
             </Link>
+          </div>
 
-            {/* Overlay - only visible on mobile when menu is open */}
-            {isMenuOpen && (
-                <div
-                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-10 md:hidden transition-opacity duration-300"
-                    onClick={closeMenu}
-                    aria-hidden="true"
-                />
-            )}
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            className="inline-flex size-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-sm transition-colors hover:bg-zinc-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:hidden"
+          >
+            <span aria-hidden="true" className="relative block h-4 w-4">
+              <span
+                className={`absolute left-0 top-0 h-0.5 w-4 bg-current transition-all ${isMenuOpen ? "translate-y-[6px] rotate-45" : ""}`}
+              />
+              <span
+                className={`absolute left-0 top-[6px] h-0.5 w-4 bg-current transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+              />
+              <span
+                className={`absolute left-0 top-[12px] h-0.5 w-4 bg-current transition-all ${isMenuOpen ? "-translate-y-[6px] -rotate-45" : ""}`}
+              />
+            </span>
+          </button>
+        </nav>
 
-            <header
-                className={`${isScrolled ? 'absolute' : 'fixed'} top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-20 w-full max-w-3xl mx-auto transition-all duration-300`}
-                role="banner"
-            >
-                <nav
-                    ref={menuRef}
-                    className={`relative bg-white max-w-264 w-full bg-light-blue rounded-[28px] py-1 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto ${
-                        isScrolled ? 'shadow-lg' : ''
-                    } transition-shadow duration-300`}
-                    aria-label="Main navigation"
-                    role="navigation"
-                >
-                    <div className="flex items-center justify-between">
-                        <Link
-                            className="flex-none rounded-md text-xl inline-block font-bold text-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                            to="/"
-                            aria-label="W3 Eco Friendly - Home"
-                            title="Go to W3 Eco Friendly homepage"
-                        >
-                            <img
-                                src="/img/logo.avif"
-                                className="inline-block object-cover h-10 w-10"
-                                width="40"
-                                height="40"
-                                alt="W3 Eco Friendly logo"
-                                loading="eager"
-                            />
-                        </Link>
-
-                        {/* Mobile Menu Toggle Button */}
-                        <div className="md:hidden">
-                            <button
-                                type="button"
-                                onClick={toggleMenu}
-                                className="size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-primary text-white hover:bg-primary-foreground transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                                aria-expanded={isMenuOpen}
-                                aria-controls="mobile-menu"
-                                aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                            >
-                                {/* Hamburger Icon */}
-                                <svg
-                                    className={`${isMenuOpen ? 'hidden' : 'block'} shrink-0 size-4`}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    aria-hidden="true"
-                                >
-                                    <line x1="3" x2="21" y1="6" y2="6"></line>
-                                    <line x1="3" x2="21" y1="12" y2="12"></line>
-                                    <line x1="3" x2="21" y1="18" y2="18"></line>
-                                </svg>
-
-                                {/* Close Icon */}
-                                <svg
-                                    className={`${isMenuOpen ? 'block' : 'hidden'} shrink-0 size-4`}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M18 6 6 18"></path>
-                                    <path d="m6 6 12 12"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Navigation Menu */}
-                    <div
-                        id="mobile-menu"
-                        className={`${
-                            isMenuOpen ? 'block' : 'hidden'
-                        } overflow-hidden transition-all duration-300 md:block pr-3`}
+        {/* Mobile panel */}
+        <div
+          id="mobile-menu"
+          className={`border-t border-zinc-100 bg-white md:hidden ${isMenuOpen ? "block" : "hidden"}`}
+        >
+          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+            <ul className="flex flex-col gap-1" role="list">
+              {primaryNav.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <li key={item.path}>
+                    <Link
+                      to={item.path}
+                      onClick={closeMenu}
+                      aria-current={isActive ? "page" : undefined}
+                      className={`flex w-full rounded-xl px-4 py-3 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                        isActive
+                          ? "bg-zinc-900 text-white"
+                          : "text-zinc-700 hover:bg-zinc-100"
+                      }`}
                     >
-                        <ul className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-                            {navLinks.map((link, index) => {
-                                const isActive = location.pathname === link.path;
-                                const isExternal = link.path.startsWith('http');
-                                const className = `text-sm md:py-4 rounded transition-colors relative block ${
-                                    isActive
-                                        ? 'text-primary font-semibold'
-                                        : 'text-black hover:text-primary'
-                                }`;
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="mt-4 border-t border-zinc-100 pt-4">
+              <Link
+                to="/contact-us"
+                onClick={closeMenu}
+                className="flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Request Pickup
+              </Link>
+              <p className="mt-2 text-center text-xs text-zinc-500">
+                For enterprises &amp; institutions - secure &amp; certified.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
 
-                                return (
-                                    <li key={index}>
-                                        {isExternal ? (
-                                            <a className={className}
-                                               href={link.path}
-                                               target="_blank"
-                                               rel="noopener noreferrer"
-                                               title={link.description}
-                                               onClick={closeMenu}
-                                            >
-                                                {link.name}
-                                            </a>
-                                        ) : (
-                                            <Link className={className}
-                                                  to={link.path}
-                                                  aria-current={isActive ? 'page' : undefined}
-                                                  onClick={closeMenu}
-                                                  title={link.description}
-                                            >
-                                                {link.name}
-                                                {/* Active indicator underline */}
-                                                {isActive && (
-                                                    <span
-                                                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary hidden md:block"
-                                                        aria-hidden="true"
-                                                    />
-                                                )}
-                                            </Link>
-                                        )}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-        </>
-    );
+      {/* Spacer so fixed header does not overlap content */}
+      <div aria-hidden="true" className="h-16" />
+    </>
+  );
 }

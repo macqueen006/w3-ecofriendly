@@ -1,7 +1,18 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Permanent redirects for deleted pages (invisible - no navigation link)
+  RewriteRule ^w3-b2/?$ / [R=301,L]
+  RewriteRule ^w3-b2/.*$ / [R=301,L]
+  RewriteRule ^w3-b2b/?$ / [R=301,L]
+  RewriteRule ^w3-ecotech/?$ / [R=301,L]
+  RewriteRule ^w3-ecotech/.*$ / [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_URI} ^/api/ [OR]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]

@@ -69,7 +69,7 @@ export default function WorkflowSection() {
                             } items-center justify-between gap-8`}
                         >
                             {/* Text Content */}
-                            <div className="w-full md:max-w-134.5 text-center md:text-left">
+                            <div className="w-full text-center md:max-w-md md:text-left">
                                 <h3 className="text-2xl leading-tight font-semibold mb-3">
                                     {step.title}
                                 </h3>
@@ -78,15 +78,17 @@ export default function WorkflowSection() {
                                 </p>
                             </div>
 
-                            {/* Image */}
-                            <div className="w-64 h-64 relative rounded-lg overflow-hidden shadow-lg">
+                            {/* Image - responsive: 320w (1x) / 640w (2x), saves ~73 KiB vs 632w original */}
+                            <div className="relative h-64 w-64 overflow-hidden rounded-lg shadow-lg">
                                 <img
-                                    src={step.image}
-                                    width={316}
-                                    height={410}
+                                    src={step.image.replace('.avif', '-320w.avif')}
+                                    srcSet={`${step.image.replace('.avif', '-320w.avif')} 320w, ${step.image.replace('.avif', '-640w.avif')} 640w`}
+                                    sizes="256px"
+                                    width={320}
+                                    height={415}
                                     loading="lazy"
                                     decoding="async"
-                                    className="w-full h-full object-cover"
+                                    className="h-full w-full object-cover"
                                     alt={step.title}
                                 />
                             </div>

@@ -1,73 +1,70 @@
 export default function PartnersSection() {
-    const partners = [
-        {
-            name: "LASEPA",
-            logo: "/img/lasepa.avif",
-            alt: "LASEPA - Lagos State Environmental Protection Agency partner"
-        },
-        {
-            name: "EPRON",
-            logo: "/img/epron.avif",
-            alt: "EPRON - Lagos State Environmental Protection Agency partner"
-        },
-        {
-            name: "Federal Ministry of Environment",
-            logo: "/img/environment.avif",
-            alt: "Federal Ministry of Environment Nigeria regulatory partner"
-        },
-        {
-            name: "NESREA",
-            logo: "/img/neserea.avif",
-            alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency"
-        },
-        {
-            name: "LAWMA",
-            logo: "/img/lawma.avif",
-            alt: "LAWMA- Trusted e-waste management partner"
-        }
-    ];
+  const partners = [
+    { name: "LASEPA", logo: "/img/lasepa.avif", alt: "LASEPA - Lagos State Environmental Protection Agency" },
+    { name: "EPRON", logo: "/img/epron.avif", alt: "EPRON - Extended Producer Responsibility Organisation Nigeria" },
+    { name: "Federal Ministry of Environment", short: "FMEnv", logo: "/img/environment.avif", alt: "Federal Ministry of Environment, Nigeria" },
+    { name: "NESREA", logo: "/img/neserea.avif", alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency" },
+    { name: "LAWMA", logo: "/img/lawma.avif", alt: "LAWMA - Lagos Waste Management Authority" },
+  ];
 
-    return (
-        <section
-            className="bg-[#DBF5EC] py-6"
-            aria-labelledby="partners-heading"
+  return (
+    <section className="border-y border-zinc-100 bg-white" aria-labelledby="partners-heading">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        {/* Eyebrow + heading */}
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="inline-flex items-center rounded-full bg-zinc-900 px-3 py-1 text-xs font-medium tracking-wide text-white">
+            Regulatory alignment
+          </p>
+          <h2
+            id="partners-heading"
+            className="mt-4 text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl"
+          >
+            Recognised within Nigeria’s regulatory landscape
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-600">
+            We operate in line with applicable mandates and collaborate where required for compliant e-waste handling.
+          </p>
+        </div>
+
+        {/* Logo wall - quiet, precise, no colour clash */}
+        <div
+          className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5"
+          role="list"
+          aria-label="Regulatory partners and certifications"
         >
-            <div className="max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto space-y-4">
-                {/* Header */}
-                <h2 id="partners-heading"
-                    className="text-neutral-400 text-center text-xl sm:text-2xl lg:text-3xl font-medium">
-                    Regulatory Partners & Certifications
-                </h2>
-
-                {/* Partners Grid */}
-                <div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4"
-                    role="list"
-                    aria-label="List of regulatory partners and certifications"
-                >
-                    {partners.map((partner, index) => (
-                        <div key={index}
-                             role="listitem"
-                             className="flex justify-start items-center gap-3 md:gap-[14px] p-4 rounded-lg hover:bg-white/50 transition-colors duration-200"
-                        >
-                            <img
-                                src={partner.logo}
-                                width="36"
-                                height="36"
-                                alt={partner.alt}
-                                loading="lazy"
-                                decoding="async"
-                                className={`w-8 h-8 sm:w-9 sm:h-9 ${partner.name === 'LAWMA' ? 'md:w-[100px]' : 'md:w-10'} md:h-10 flex-shrink-0 object-contain`}
-                            />
-                            <p className="text-sm sm:text-base font-medium text-neutral-700 text-center sm:text-left">
-                                {partner.name}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+          {partners.map((partner) => {
+            const isLawma = partner.name === "LAWMA";
+            return (
+              <div
+                key={partner.name}
+                role="listitem"
+                className="group flex min-h-24 flex-col items-center justify-center rounded-2xl border border-zinc-100 bg-zinc-50/60 px-4 py-6 text-center transition-colors hover:border-zinc-200 hover:bg-white"
+              >
+                <img
+                  src={isLawma ? "/img/lawma-166w.avif" : partner.logo}
+                  srcSet={isLawma ? "/img/lawma-166w.avif 166w, /img/lawma-332w.avif 332w" : undefined}
+                  sizes={isLawma ? "96px" : undefined}
+                  alt={partner.alt}
+                  width={96}
+                  height={36}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-8 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100"
+                />
+              <p className="mt-3 text-xs font-medium tracking-wide text-zinc-700">
+                {"short" in partner && partner.short ? partner.short : partner.name}
+              </p>
+              {"short" in partner && partner.short ? <span className="sr-only">{partner.name}</span> : null}
             </div>
-            <p className="text-center mt-4">Logos displayed represent institutional engagement, oversight collaboration, or regulatory
-                interaction in line with applicable mandates.</p>
-        </section>
-    );
+            );
+          })}
+        </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-5 text-zinc-500">
+          Logos are shown to indicate institutional engagement or oversight collaboration under applicable mandates, not to imply
+          endorsement or certification beyond stated operations.
+        </p>
+      </div>
+    </section>
+  );
 }

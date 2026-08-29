@@ -1,44 +1,36 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 const CTASection = () => {
-    return (
-        <section
-            className="bg-[url('/img/cta.avif')] bg-cover bg-center relative"
-            aria-labelledby="cta-heading"
-        >
-            {/* Overlay for text readability */}
-            <div className="absolute inset-0 bg-black/30" aria-hidden="true"></div>
-
-            <div className="space-y-8 sm:space-y-10 py-12 max-w-212.5 mx-auto relative text-white px-4 sm:px-6">
-                {/* Content */}
-                <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center z-10 relative">
-                    <h2
-                        id="cta-heading"
-                        className="text-2xl sm:text-3xl md:text-4xl leading-tight font-medium px-2"
-                    >
-                        Ready to Advance Your Sustainability Goals?
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg leading-relaxed font-normal text-center w-full px-2">
-                        Partner with a technology-enabled e-waste management provider supporting traceability,
-                        regulatory alignment, and responsible technology lifecycle management across Nigeria.
-                    </p>
-                </div>
-
-                {/* CTA Button */}
-                <div className="flex justify-center">
-                    <Link
-                        to="/contact-us"
-                        className="w-full sm:w-auto sm:min-w-60 md:min-w-65 lg:w-[272.8px] px-6 sm:px-8 md:px-[10.04px] py-4 sm:py-5 md:py-2.75 h-auto flex justify-center items-center rounded-lg bg-primary text-white hover:bg-[#0a3322] active:bg-[#051a0f] focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
-                        aria-label="Get started with W3 Eco-friendly e-waste management services"
-                    >
-                        <span className="text-base sm:text-lg leading-relaxed font-normal">
-                          Engage Our Team
-                        </span>
-                    </Link>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="relative bg-zinc-900" aria-labelledby="cta-heading">
+      <img src="/img/cta.avif" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60" aria-hidden="true" />
+      <div className="relative mx-auto max-w-3xl space-y-8 px-4 py-14 text-center text-white sm:px-6 sm:py-16">
+        <div className="space-y-4">
+          <h2 id="cta-heading" className="text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+            Ready to handle e-waste the right way?
+          </h2>
+          <p className="mx-auto max-w-2xl text-sm leading-6 text-white/70 sm:text-base">
+            Partner with a provider built for compliance, traceability and verified recycling - from secure pickup to certification.
+          </p>
+        </div>
+        <div className="flex flex-col justify-center gap-3 sm:flex-row">
+          <Link
+            to="/contact-us"
+            className="inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto"
+          >
+            Request Pickup
+          </Link>
+          <Link
+            to="/contact-us"
+            className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto"
+          >
+            Contact an Expert
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default CTASection;

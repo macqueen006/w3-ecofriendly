@@ -1,30 +1,37 @@
-import {motion} from "framer-motion";
-import type {ComponentType} from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import type { ComponentType } from "react";
 
 const transition = (Component: ComponentType) => {
-    const WrappedComponent = () => (
-        <>
-            <Component />
-            <motion.div
-                className="fixed top-0 left-0 w-full h-full bg-primary-foreground origin-bottom z-20"
-                initial={{scaleY: 0}}
-                animate={{scaleY: 0}}
-                exit={{scaleY: 1}}
-                transition={{duration: 1, ease: [0.22, 1, 0.36, 1]}}
-            />
-            <motion.div
-                className="fixed top-0 left-0 w-full h-full bg-primary-foreground origin-top z-20"
-                initial={{scaleY: 1}}
-                animate={{scaleY: 0}}
-                exit={{scaleY: 0}}
-                transition={{duration: 1, ease: [0.22, 1, 0.36, 1]}}
-            />
-        </>
+  const Wrapped = () => {
+    const shouldReduce = useReducedMotion();
+
+    if (shouldReduce) {
+      return <Component />;
+    }
+
+    return (
+      <>
+        <Component />
+        <motion.div
+          className="pointer-events-none fixed inset-0 z-20 origin-bottom bg-[#072416]"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 0 }}
+          exit={{ scaleY: 1 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        />
+        <motion.div
+          className="pointer-events-none fixed inset-0 z-20 origin-top bg-[#072416]"
+          initial={{ scaleY: 1 }}
+          animate={{ scaleY: 0 }}
+          exit={{ scaleY: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </>
     );
+  };
 
-    WrappedComponent.displayName = `Transition(${Component.displayName || Component.name || 'Component'})`;
-
-    return WrappedComponent;
-}
+  Wrapped.displayName = `Transition(${Component.displayName || Component.name || "Component"})`;
+  return Wrapped;
+};
 
 export default transition;

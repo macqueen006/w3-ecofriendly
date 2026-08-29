@@ -1,281 +1,308 @@
-import Header from "../components/layout/Header.tsx";
-import Footer from "../components/layout/Footer.tsx";
-import SEO from "../components/SEO.tsx";
-import {useState} from "react";
-import * as React from "react";
-import {ContactPageSchema} from "../components/StructuredData.tsx";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import SEO from "@/components/SEO";
+import { ContactPageSchema } from "@/components/StructuredData";
+import { useState } from "react";
+import { seoConfig } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 
+type EnquiryType = "pickup" | "data-destruction" | "compliance" | "general";
 
 const ContactUs = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        message: ''
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const seo = seoConfig["/contact-us"];
+  const [formData, setFormData] = useState({
+    name: "",
+    organisation: "",
+    email: "",
+    phone: "",
+    enquiryType: "pickup" as EnquiryType,
+    message: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState<string>("");
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+  const validate = () => {
+    const e: Record<string, string> = {};
+    if (!formData.name.trim()) e.name = "Please enter your name.";
+    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) e.email = "Please enter a valid email address.";
+    if (!formData.message.trim() || formData.message.trim().length < 10) e.message = "Please enter at least 10 characters.";
+    return e;
+  };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const v = validate();
+    setErrors(v);
+    if (Object.keys(v).length > 0) return;
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitStatus('success');
-            // Reset form
-            setFormData({ name: '', email: '', company: '', message: '' });
-        }, 1500);
-    };
+    setSubmitStatus("submitting");
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const payload = await res.json().catch(() => ({}));
+      if (!res.ok || payload.ok === false) {
+        const msg =
+          (payload.error as string) ||
+          (payload.fields ? "Please check the highlighted fields." : "Failed to send. Please try again or contact us directly.");
+        if (payload.fields && typeof payload.fields === "object") {
+          setErrors((prev) => ({ ...prev, ...(payload.fields as Record<string, string>) }));
+        }
+        setSubmitError(msg);
+        setSubmitStatus("error");
+        return;
+      }
+      setSubmitStatus("success");
+      setFormData({ name: "", organisation: "", email: "", phone: "", enquiryType: "pickup", message: "" });
+      setErrors({});
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Network error. Please try again.";
+      setSubmitError(msg + " You can also reach us directly at " + siteConfig.contact.email);
+      setSubmitStatus("error");
+    }
+  };
 
-    return (
-        <>
-            <SEO
-                title="Contact Us - Get in Touch with W3 Eco Friendly"
-                description="Contact W3 Eco Friendly for sustainable e-waste management solutions. Located in Ikorodu, Lagos. Email: W3@Ecofriendly.com | Phone: +234-807-787-5562"
-                keywords="contact W3 Eco Friendly, e-waste management contact, sustainable recycling Nigeria, environmental services Lagos, get in touch"
-                url="/contact-us"
-            />
-            <ContactPageSchema />
+  return (
+    <>
+      <SEO title={seo.title} description={seo.description} url={seo.url} />
+      <ContactPageSchema />
+      <Header />
+      <main id="main-content" tabIndex={-1} className="bg-zinc-50 focus:outline-none">
+        <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">Request a pickup or contact us</h1>
+            <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-base">
+              For enterprises and institutions - secure e-waste pickup, data destruction and compliance certification. We respond on business hours.
+            </p>
+          </div>
 
-            <div className="bg-secondary-foreground">
-                <Header />
+          <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-[1.4fr_0.9fr]">
+            {/* Form */}
+            <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+              <h2 className="text-lg font-semibold text-zinc-900">Send an enquiry</h2>
+              <p className="mt-1 text-sm text-zinc-600">Primary action: Request Pickup. We’ll route your request to operations.</p>
 
-                <main id="main-content">
-                    {/* Contact Form Section */}
-                    <section
-                        className="max-w-xl mx-auto pt-24 space-y-6 p-4"
-                        aria-labelledby="contact-form-heading"
-                    >
-                        <article className="p-4 sm:p-6 lg:p-8 flex flex-col gap-6 bg-white/40 rounded-4xl">
-                            <header className="space-y-3">
-                                <h1 id="contact-form-heading" className="text-lg font-semibold text-center px-4">
-                                    Get In Touch with Our Team
-                                </h1>
-                                <p className="text-base text-center text-gray-700">
-                                    Our support team is always available to provide assistance and guidance for your e-waste management needs.
-                                </p>
-                            </header>
+              <form className="mt-6 space-y-5" onSubmit={handleSubmit} noValidate aria-label="Contact form">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="c-name" className="block text-sm font-medium text-zinc-900">
+                      Name <span className="text-red-600" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      id="c-name"
+                      name="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      placeholder="Your full name"
+                      autoComplete="name"
+                      aria-invalid={Boolean(errors.name)}
+                      aria-describedby={errors.name ? "err-name" : undefined}
+                    />
+                    {errors.name && (
+                      <p id="err-name" className="mt-1 text-xs text-red-600" role="alert">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="c-org" className="block text-sm font-medium text-zinc-900">
+                      Organisation
+                    </label>
+                    <input
+                      id="c-org"
+                      name="organisation"
+                      value={formData.organisation}
+                      onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
+                      className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      placeholder="Company or institution"
+                      autoComplete="organization"
+                    />
+                  </div>
+                </div>
 
-                            <form
-                                className="max-w-171.25 w-full mx-auto space-y-6"
-                                onSubmit={handleSubmit}
-                                aria-label="Contact form"
-                            >
-                                {/* Name Field */}
-                                <div className="w-full space-y-3.5">
-                                    <label
-                                        htmlFor="contact-name"
-                                        className="block text-sm font-medium mb-2"
-                                    >
-                                        Name <span className="text-red-500" aria-label="required">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="contact-name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className="py-2.5 sm:py-3 px-4 block w-full bg-white border border-gray-200 rounded-lg sm:text-sm focus:border-transparent focus:ring-2 focus:ring-[#0F5132] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
-                                        placeholder="Enter your full name"
-                                        required
-                                        aria-required="true"
-                                        autoComplete="name"
-                                    />
-                                </div>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="c-email" className="block text-sm font-medium text-zinc-900">
+                      Email <span className="text-red-600" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      id="c-email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      placeholder="you@company.com"
+                      autoComplete="email"
+                      aria-invalid={Boolean(errors.email)}
+                      aria-describedby={errors.email ? "err-email" : undefined}
+                    />
+                    {errors.email && (
+                      <p id="err-email" className="mt-1 text-xs text-red-600" role="alert">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="c-phone" className="block text-sm font-medium text-zinc-900">
+                      Phone
+                    </label>
+                    <input
+                      id="c-phone"
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      placeholder="+234 …"
+                      autoComplete="tel"
+                    />
+                  </div>
+                </div>
 
-                                {/* Email Field */}
-                                <div className="w-full space-y-3.5">
-                                    <label
-                                        htmlFor="contact-email"
-                                        className="block text-sm font-medium mb-2"
-                                    >
-                                        Email Address <span className="text-red-500" aria-label="required">*</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="contact-email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className="py-2.5 sm:py-3 px-4 block w-full bg-white border border-gray-200 rounded-lg sm:text-sm focus:border-transparent focus:ring-2 focus:ring-[#0F5132] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
-                                        placeholder="your.email@example.com"
-                                        required
-                                        aria-required="true"
-                                        autoComplete="email"
-                                    />
-                                </div>
+                <div>
+                  <label htmlFor="c-type" className="block text-sm font-medium text-zinc-900">
+                    Enquiry type
+                  </label>
+                  <select
+                    id="c-type"
+                    value={formData.enquiryType}
+                    onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value as EnquiryType })}
+                    className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  >
+                    <option value="pickup">Request Pickup</option>
+                    <option value="data-destruction">Secure data destruction</option>
+                    <option value="compliance">Compliance &amp; certification</option>
+                    <option value="general">General enquiry</option>
+                  </select>
+                </div>
 
-                                {/* Company Field */}
-                                <div className="w-full space-y-3.5">
-                                    <label
-                                        htmlFor="contact-company"
-                                        className="block text-sm font-medium mb-2"
-                                    >
-                                        Company <span className="text-gray-500 text-xs">(Optional)</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="contact-company"
-                                        name="company"
-                                        value={formData.company}
-                                        onChange={handleChange}
-                                        className="py-2.5 sm:py-3 px-4 block w-full bg-white border border-gray-200 rounded-lg sm:text-sm focus:border-transparent focus:ring-2 focus:ring-[#0F5132] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
-                                        placeholder="Your company name"
-                                        autoComplete="organization"
-                                    />
-                                </div>
+                <div>
+                  <label htmlFor="c-message" className="block text-sm font-medium text-zinc-900">
+                    Message <span className="text-red-600" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="c-message"
+                    name="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={5}
+                    className="mt-2 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    placeholder="Tell us about volumes, locations and timing…"
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={errors.message ? "err-message" : undefined}
+                  />
+                  {errors.message ? (
+                    <p id="err-message" className="mt-1 text-xs text-red-600" role="alert">
+                      {errors.message}
+                    </p>
+                  ) : (
+                    <p className="mt-1 text-xs text-zinc-500">At least 10 characters.</p>
+                  )}
+                </div>
 
-                                {/* Message Field */}
-                                <div className="w-full space-y-3.5">
-                                    <label
-                                        htmlFor="contact-message"
-                                        className="block text-sm font-medium mb-2"
-                                    >
-                                        Message <span className="text-red-500" aria-label="required">*</span>
-                                    </label>
-                                    <div className="w-full space-y-3">
-                                        <textarea
-                                            id="contact-message"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            className="py-2.5 sm:py-3 px-4 block w-full bg-white border border-gray-200 rounded-lg sm:text-sm focus:border-transparent focus:ring-2 focus:ring-[#0F5132] focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
-                                            rows={6}
-                                            placeholder="Tell us how we can help you with e-waste management or recycling services..."
-                                            required
-                                            aria-required="true"
-                                            minLength={10}
-                                        ></textarea>
-                                        <p className="text-xs text-gray-500">
-                                            Please provide details about your inquiry (minimum 10 characters)
-                                        </p>
-                                    </div>
-                                </div>
+                {/* Honeypot - hidden from users, bots may fill */}
+                <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                  <label htmlFor="c-hp">Leave this field empty</label>
+                  <input id="c-hp" name="_hp" tabIndex={-1} autoComplete="off" />
+                </div>
 
-                                {/* Submit Button */}
-                                <div className="max-w-118 mx-auto pt-2">
-                                    <button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        className="px-4 py-3 inline-flex w-full justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-primary text-white hover:bg-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-colors"
-                                        aria-label={isSubmitting ? 'Sending message...' : 'Send message'}
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                                </svg>
-                                                Sending...
-                                            </>
-                                        ) : (
-                                            'Send Message'
-                                        )}
-                                    </button>
-                                </div>
+                <button
+                  type="submit"
+                  disabled={submitStatus === "submitting"}
+                  className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {submitStatus === "submitting" ? "Sending..." : "Send enquiry"}
+                </button>
 
-                                {/* Success/Error Messages */}
-                                {submitStatus === 'success' && (
-                                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg" role="alert">
-                                        <p className="text-sm text-green-800 text-center">
-                                            ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
-                                        </p>
-                                    </div>
-                                )}
-                                {submitStatus === 'error' && (
-                                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg" role="alert">
-                                        <p className="text-sm text-red-800 text-center">
-                                            ✗ Something went wrong. Please try again or contact us directly.
-                                        </p>
-                                    </div>
-                                )}
-                            </form>
-                        </article>
-                    </section>
+                {submitStatus === "success" && (
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4" role="status" aria-live="polite">
+                    <p className="text-sm font-medium text-emerald-900">Enquiry sent successfully.</p>
+                    <p className="mt-1 text-sm leading-6 text-emerald-800">
+                      Thank you - we have received your enquiry and will respond during business hours.
+                    </p>
+                  </div>
+                )}
 
-                    {/* Contact Information Section */}
-                    <section
-                        className="max-w-100 mx-auto space-y-6 p-4 sm:p-6"
-                        aria-labelledby="visit-heading"
-                    >
-                        <h2 id="visit-heading" className="font-bold text-2xl text-center">
-                            Prefer a Visit Approach?
-                        </h2>
-
-                        {/* Address */}
-                        <address className="text-base text-gray-700 text-center not-italic">
-                            <strong className="sr-only">Our Office Address:</strong>
-                            Suit 73 & 74, Block D, Ipakodo Shopping Complex
-                            Ikorodu, Lagos State<br />
-                            Nigeria
-                        </address>
-
-                        {/* Contact Details */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
-                            <a
-                                href="mailto:W3@Ecofriendly.com"
-                                className="text-sm text-gray-700 hover:text-primary transition-colors focus:outline-none focus:underline inline-flex items-center gap-2"
-                                aria-label="Send us an email"
-                            >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                W3@Ecofriendly.com
-                            </a>
-
-                            <a
-                                href="tel:+2348077875562"
-                                className="text-sm text-gray-700 hover:text-primary transition-colors focus:outline-none focus:underline inline-flex items-center gap-2"
-                                aria-label="Call us"
-                            >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                +234 807 787 5562
-                            </a>
-                        </div>
-
-                        {/* Business Hours */}
-                        <div className="pt-4 border-t border-gray-200">
-                            <h3 className="text-sm font-semibold text-center mb-2">Business Hours</h3>
-                            <p className="text-sm text-gray-600 text-center">
-                                Monday - Friday: 9:00 AM - 6:00 PM<br />
-                                <span className="text-gray-500">Weekends: Closed</span>
-                            </p>
-                        </div>
-
-                        {/* Map Link */}
-                        <div className="pt-2">
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=Ipakodo+Shopping+Complex+Ikorodu+Lagos+Nigeria"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center gap-2 w-full px-4 py-2 text-sm font-medium text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                                aria-label="Get directions to our office on Google Maps"
-                            >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                Get Directions
-                            </a>
-                        </div>
-                    </section>
-                </main>
-
-                <Footer />
+                {submitStatus === "error" && (
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 p-4" role="alert" aria-live="assertive">
+                    <p className="text-sm font-medium text-amber-900">Could not send enquiry.</p>
+                    <p className="mt-1 text-sm leading-6 text-amber-800">{submitError || "Something went wrong. Please try again."}</p>
+                    <p className="mt-2 text-sm">
+                      <a href={`mailto:${siteConfig.contact.email}`} className="font-medium text-amber-900 underline">
+                        {siteConfig.contact.email}
+                      </a>{" "}
+                      ·{" "}
+                      <a href={`tel:${siteConfig.contact.phoneHref}`} className="font-medium text-amber-900 underline">
+                        {siteConfig.contact.phoneDisplay}
+                      </a>
+                    </p>
+                    <p className="mt-2 text-xs text-amber-700">
+                      Endpoint: <code className="rounded bg-amber-100 px-1">POST /api/contact.php</code> - delivery via Resend. If this
+                      persists, use email or phone directly.
+                    </p>
+                  </div>
+                )}
+              </form>
             </div>
-        </>
-    );
+
+            {/* Contact details */}
+            <div className="space-y-6">
+              <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
+                <h2 className="text-sm font-semibold text-zinc-900">Visit or contact directly</h2>
+                <address className="mt-3 not-italic text-sm leading-6 text-zinc-600">
+                  {siteConfig.contact.address.street}
+                  <br />
+                  {siteConfig.contact.address.locality}, {siteConfig.contact.address.region}
+                  <br />
+                  {siteConfig.contact.address.countryName}
+                </address>
+                <div className="mt-4 space-y-2 text-sm">
+                  <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-2 font-medium text-zinc-900 hover:text-primary">
+                    {siteConfig.contact.email}
+                  </a>
+                  <a href={`tel:${siteConfig.contact.phoneHref}`} className="flex items-center gap-2 font-medium text-zinc-900 hover:text-primary">
+                    {siteConfig.contact.phoneDisplay}
+                  </a>
+                </div>
+                <div className="mt-4 border-t border-zinc-100 pt-4 text-xs leading-5 text-zinc-500">
+                  <p className="font-medium text-zinc-700">Business hours</p>
+                  <p>
+                    {siteConfig.businessHours.days}: {siteConfig.businessHours.hours}
+                    <br />
+                    {siteConfig.businessHours.closedNote}
+                  </p>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ipakodo+Shopping+Complex+Ikorodu+Lagos+Nigeria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
+                  Get directions
+                </a>
+              </div>
+              <div className="rounded-2xl bg-[#072416] p-6 text-white">
+                <h3 className="text-sm font-semibold">What happens after you request a pickup?</h3>
+                <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm leading-6 text-white/80">
+                  <li>We confirm scope, timing and access.</li>
+                  <li>Secure collection with documentation.</li>
+                  <li>Data destruction where required.</li>
+                  <li>Certified recycling and reporting.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default ContactUs;

@@ -1,74 +1,73 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
+import { siteConfig } from "@/config/site";
 
 interface SEOProps {
-    title?: string
-    description?: string
-    keywords?: string
-    image?: string
-    url?: string
-    author?: string
-    type?: string
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  author?: string;
+  type?: string;
+  robots?: string;
 }
 
 export default function SEO({
-    title,
-    description,
-    keywords,
-    image,
-    url,
-    author = 'W3 Eco Friendly',
-    type = 'website'
+  title,
+  description,
+  keywords,
+  image,
+  url,
+  author = siteConfig.shortName,
+  type = "website",
+  robots,
 }: SEOProps) {
-    useEffect(() => {
-        if (title) {
-            document.title = `${title}`
-        }
+  useEffect(() => {
+    if (title) document.title = title;
 
-        const setMetaTag = (name: string, content: string | undefined, isProperty = false) => {
-            if (!content) return
+    const setMetaTag = (name: string, content: string | undefined, isProperty = false) => {
+      if (!content) return;
+      const attribute = isProperty ? "property" : "name";
+      let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement | null;
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", content);
+    };
 
-            const attribute = isProperty ? 'property' : 'name'
-            let element = document.querySelector(`meta[${attribute}="${name}"]`)
+    const ensureLink = (rel: string, href: string) => {
+      let link = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", rel);
+        document.head.appendChild(link);
+      }
+      link.setAttribute("href", href);
+    };
 
-            if (!element) {
-                element = document.createElement('meta')
-                element.setAttribute(attribute, name)
-                document.head.appendChild(element)
-            }
+    setMetaTag("description", description);
+    if (keywords) setMetaTag("keywords", keywords);
+    setMetaTag("author", author);
+    if (robots) setMetaTag("robots", robots);
 
-            element.setAttribute('content', content)
-        }
+    // Open Graph
+    setMetaTag("og:title", title ?? siteConfig.shortName, true);
+    setMetaTag("og:description", description, true);
+    setMetaTag("og:image", image ?? siteConfig.ogImage, true);
+    setMetaTag("og:url", url ? `${siteConfig.url}${url}` : siteConfig.url, true);
+    setMetaTag("og:type", type, true);
+    setMetaTag("og:site_name", siteConfig.shortName, true);
 
-        // Basic meta tags
-        setMetaTag('description', description)
-        setMetaTag('keywords', keywords)
-        setMetaTag('author', author)
+    // Twitter
+    setMetaTag("twitter:card", "summary_large_image");
+    setMetaTag("twitter:title", title ?? siteConfig.shortName);
+    setMetaTag("twitter:description", description);
+    setMetaTag("twitter:image", image ?? siteConfig.ogImage);
 
-        // Open Graph
-        setMetaTag('og:title', title ? `${title} - W3 Eco Friendly` : 'W3 Eco Friendly', true)
-        setMetaTag('og:description', description, true)
-        setMetaTag('og:image', image, true)
-        setMetaTag('og:url', url ? `https://w3eco-friendly.com${url}` : 'https://w3eco-friendly.com', true)
-        setMetaTag('og:type', type, true)
+    if (url) ensureLink("canonical", `${siteConfig.url}${url}`);
+  }, [title, description, keywords, image, url, author, type, robots]);
 
-        // Twitter Card
-        setMetaTag('twitter:card', 'summary_large_image')
-        setMetaTag('twitter:title', title ? `${title} - W3 Eco Friendly` : 'W3 Eco Friendly')
-        setMetaTag('twitter:description', description)
-        setMetaTag('twitter:image', image)
-
-        // Canonical link
-        if (url) {
-            let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
-            if (!canonical) {
-                canonical = document.createElement('link')
-                canonical.setAttribute('rel', 'canonical')
-                document.head.appendChild(canonical)
-            }
-            canonical.setAttribute('href', `https://w3eco-friendly.com${url}`)
-        }
-
-    }, [title, description, keywords, image, url, author, type])
-
-    return null // This component doesn't render anything
+  return null;
 }

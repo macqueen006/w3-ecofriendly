@@ -1,268 +1,153 @@
-import Header from "../components/layout/Header.tsx";
-import Footer from "../components/layout/Footer.tsx";
-import SEO from '../components/SEO';
-import {ImpactPageSchema} from "../components/StructuredData.tsx";
-import {Link} from "react-router";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import SEO from "@/components/SEO";
+import { ImpactPageSchema } from "@/components/StructuredData";
+import { Link } from "react-router";
+import { seoConfig } from "@/config/seo";
 
 const Impact = () => {
-    return (
-        <>
-            <SEO
-                title="Our Environmental Impact - Measurable Change, Real Results"
-                description="Discover W3 Eco Friendly's environmental impact: 52,847 electronics recycled, 8.5 tons of metals recovered, and 56 certificates issued. Learn how we're creating measurable change through sustainable e-waste management."
-                keywords="environmental impact, e-waste recycling statistics, electronics recycling Nigeria, sustainable waste management, metal recovery, carbon footprint reduction, toxic waste prevention"
-                url="/impact"
-                image="https:/w3eco-friendly.com/impact-hero.avif"
-            />
-            <ImpactPageSchema/>
-
-            <Header/>
-
-            <main id="main-content">
-                <section
-                    className="pt-24 relative min-h-screen md:min-h-150 lg:min-h-screen flex flex-col justify-center"
-                    aria-labelledby="hero-heading"
+  const seo = seoConfig["/impact"];
+  return (
+    <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        url={seo.url}
+        image="https://w3eco-friendly.com/img/impact-hero.avif"
+      />
+      <ImpactPageSchema />
+      <Header />
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+        <section className="relative flex min-h-[540px] flex-col justify-center bg-zinc-900 pt-8" aria-labelledby="hero-heading">
+          <img
+            src="/img/impact-hero.avif"
+            alt=""
+            aria-hidden="true"
+            width={1440}
+            height={900}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" aria-hidden="true" />
+          <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:flex-row lg:items-start lg:px-8 lg:py-14">
+            <div className="w-full space-y-6 lg:w-1/2">
+              <span className="inline-flex w-fit items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-wide text-white backdrop-blur">
+                Our Environmental Impact
+              </span>
+              <h1 id="hero-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                Measurable impact. Verifiable outcomes.
+              </h1>
+              <p className="max-w-xl text-sm leading-6 text-white/80 sm:text-base">
+                W3 Eco Friendly Ltd delivers measurable environmental and social value by enabling responsible electronic-waste management
+                across Nigeria.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/contact-us"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                    <picture aria-hidden="true">
-                        <source srcSet="/img/impact-hero.avif" type="image/avif"/>
-                        <img
-                            src="/img/impact-hero.avif"
-                            alt=""
-                            width={1440}
-                            height={900}
-                            fetchPriority="high"
-                            loading="eager"
-                            decoding="async"
-                            className="absolute inset-0 w-full h-full object-cover object-center"
-                            style={{zIndex: 0}}
-                        />
-                    </picture>
-                    <div
-                        className="relative z-10 max-w-6xl py-8 px-4 sm:px-6 lg:px-8 lg:py-10 mx-auto space-y-8 flex flex-col lg:flex-row items-start w-full gap-8 lg:gap-0">
-                        <div className="space-y-6 lg:space-y-10 w-full lg:w-1/2">
-                            <div
-                                className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
-                                <span
-                                    className="text-sm md:text-base font-medium text-white">Our Environmental Impact</span>
-                            </div>
-                            <h1 id="hero-heading" className="text-white font-bold text-3xl sm:text-4xl lg:text-5xl">
-                                Measurable Impact. Verifiable Outcomes.
-                            </h1>
-                            <p className="text-white text-base sm:text-lg max-w-xl">
-                                W3 Eco-Friendly Ltd delivers measurable environmental and social value by enabling
-                                responsible electronic waste management across Nigeria.
-                            </p>
-                            <div className="flex flex-col justify-start items-center gap-2 sm:flex-row sm:gap-4">
-                                <a
-                                    className="w-full sm:w-auto whitespace-nowrap py-3 px-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-primary text-white hover:bg-primary/40 focus:outline-hidden focus:bg-primary disabled:opacity-50 disabled:pointer-events-none"
-                                    href="/w3-ecotech"
-                                    aria-label="Learn more about our e-waste recycling process"
-                                >
-                                    Learn More
-                                </a>
-                            </div>
-                        </div>
-                        <div
-                            className="w-full lg:w-1/2 flex flex-col md:flex-row md:flex-wrap lg:flex-col gap-4 md:justify-center lg:justify-start">
-                            <article
-                                className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:mx-0 rounded-lg bg-[url('/img/card-frame-1.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
-                                <div className="flex flex-col gap-1 items-center text-white">
-                                    <div>
-                                        <img
-                                            src="/img/trash-icon.svg"
-                                            className="w-full h-full inline-block object-cover object-center"
-                                            width={40}
-                                            height={40}
-                                            alt="Recycling icon"
-                                            loading="eager"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                    <h2 className="font-bold text-xl">52,847</h2>
-                                    <p className="text-sm">Electronics Recycled</p>
-                                </div>
-                            </article>
-                            <article
-                                className="w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-64 h-36 mx-auto md:mx-0 lg:ml-20 xl:ml-36 rounded-lg bg-[url('/img/card-frame-2.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
-                                <div className="flex flex-col gap-1 items-center text-white">
-                                    <div>
-                                        <img
-                                            src="/img/certificate-icon.svg"
-                                            className="w-full h-full inline-block object-cover object-center"
-                                            width={40}
-                                            height={40}
-                                            alt="Certificate icon"
-                                            loading="eager"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                    <h2 className="font-bold text-xl">56</h2>
-                                    <p className="text-sm">Certificates Issued</p>
-                                </div>
-                            </article>
-                            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-50 lg:w-auto mx-auto md:mx-0">
-                                <div className="hidden lg:flex flex-col items-center absolute -top-28 left-24"
-                                     aria-hidden="true">
-                                    <div
-                                        className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
-                                        <div
-                                            className="bg-white/10 rounded-full w-10 h-10 sm:w-12 sm:h-12 absolute"></div>
-                                        <div
-                                            className="bg-white/15 rounded-full w-8 h-8 sm:w-10 sm:h-10 absolute"></div>
-                                        <div className="bg-white/20 rounded-full w-6 h-6 sm:w-8 sm:h-8 absolute"></div>
-                                        <div className="bg-white/25 rounded-full w-4 h-4 sm:w-6 sm:h-6 absolute"></div>
-                                    </div>
-                                    <div className="flex justify-center">
-                                        <div className="h-8 sm:h-16 w-px bg-white"></div>
-                                    </div>
-                                </div>
-
-                                <article
-                                    className="w-full lg:w-64 h-36 rounded-lg bg-[url('/img/card-frame-3.avif')] bg-cover bg-center bg-no-repeat flex justify-center items-center">
-                                    <div className="flex flex-col gap-1 items-center text-white">
-                                        <div>
-                                            <img
-                                                src="/img/metal-can-icon.svg"
-                                                className="w-full h-full inline-block object-cover object-center"
-                                                width={40}
-                                                height={40}
-                                                alt="Metal recovery icon"
-                                                loading="eager"
-                                                decoding="async"
-                                            />
-                                        </div>
-                                        <h2 className="font-bold text-xl">8.5T</h2>
-                                        <p className="text-sm">Metals Recovered</p>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    className="bg-primary-foreground relative overflow-hidden"
-                    aria-labelledby="why-matters-heading"
+                  Request Pickup
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                    <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto space-y-8">
-                        <div className="flex flex-col gap-4 items-center w-full">
-                            <div
-                                className="inline-flex w-fit justify-center items-center gap-2.5 px-4 py-2 bg-[#CEDAD6]/20 rounded-full">
-                                <img
-                                    width="44"
-                                    height="44"
-                                    alt=""
-                                    className="w-5 h-5 md:w-6 md:h-6"
-                                    src="/img/sparkle-white.avif"
-                                    aria-hidden="true"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <p className="text-sm md:text-base font-medium text-white">Why It Matters</p>
-                            </div>
-                            <h2 id="why-matters-heading"
-                                className="text-white/70 font-medium text-xl sm:text-2xl md:text-3xl text-center max-w-xl px-4">
-                                Every device we recycle contributes to a cleaner environment.
-                            </h2>
-                        </div>
+                  Learn more
+                </Link>
+              </div>
+              <p className="text-xs leading-5 text-white/60">
+                Statistics below are shown as provided. Owner to verify figures, methodology and time period before they are treated as
+                published claims.
+              </p>
+            </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-0">
-                            <article className="space-y-6 sm:space-y-8">
-                                <div className="space-y-6 sm:space-y-8">
-                                    <figure className="aspect-square relative max-w-sm mx-auto">
-                                        <img
-                                            src="/img/impact-1.avif"
-                                            className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:right-0 lg:-rotate-14"
-                                            alt="Environmental protection from toxic e-waste materials"
-                                            loading="lazy"
-                                            width="400"
-                                            height="400"
-                                            decoding="async"
-                                        />
-                                    </figure>
-                                    <div className="text-center text-white space-y-2 px-4">
-                                        <h3 className="font-medium text-base sm:text-lg">Prevent Toxic Pollution</h3>
-                                        <p className="text-sm sm:text-base text-white/80">
-                                            electronic waste contains hazardous substances that pose serious risks.
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <article className="space-y-6 sm:space-y-8">
-                                <figure className="aspect-square relative max-w-sm mx-auto">
-                                    <img
-                                        src="/img/impact-2.avif"
-                                        className="w-full h-full inline-block object-cover rounded-lg object-center absolute inset-0"
-                                        alt="Resource conservation through e-waste recycling"
-                                        loading="lazy"
-                                        width="400"
-                                        height="400"
-                                        decoding="async"
-                                    />
-                                </figure>
-                                <div className="text-center text-white space-y-2 px-4">
-                                    <h3 className="font-medium text-base sm:text-lg">Conserve Natural Resources</h3>
-                                    <p className="text-sm sm:text-base text-white/80">
-                                        Recycling recovers valuable materials like gold, silver, copper, and rare.
-                                    </p>
-                                </div>
-                            </article>
-                            <article className="space-y-6 sm:space-y-8">
-                                <figure className="aspect-square relative max-w-sm mx-auto">
-                                    <img
-                                        src="/img/impact-3.avif"
-                                        className="w-full h-full lg:h-64 lg:w-64 inline-block object-cover rounded-lg object-center lg:absolute lg:top-10 lg:rotate-12"
-                                        alt="Carbon emission reduction through sustainable recycling"
-                                        loading="lazy"
-                                        width="400"
-                                        height="400"
-                                        decoding="async"
-                                    />
-                                </figure>
-                                <div className="text-center text-white space-y-2 px-4">
-                                    <h3 className="font-medium text-base sm:text-lg">Reduce Carbon Footprint</h3>
-                                    <p className="text-sm sm:text-base text-white/80">
-                                        Extending the lifecycle of electronic assets significantly lowers.
-                                    </p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    className="bg-[#0D3924] relative overflow-hidden"
-                    aria-labelledby="partners-heading"
+            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:w-1/2 lg:grid-cols-1 lg:justify-items-end">
+              {[
+                { value: "52,847", label: "Electronics Recycled", icon: "/img/trash-icon.svg" },
+                { value: "56", label: "Certificates Issued", icon: "/img/certificate-icon.svg" },
+                { value: "8.5T", label: "Metals Recovered", icon: "/img/metal-can-icon.svg" },
+              ].map((card) => (
+                <article
+                  key={card.label}
+                  className="flex h-36 w-full max-w-sm items-center justify-center rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur"
                 >
-                    <div className="max-w-6xl py-10 px-4 sm:px-6 lg:px-8 lg:py-16 mx-auto">
-                        <div className="max-w-2xl text-center mx-auto">
-                            <div className="mb-5 space-y-4">
-                                <h2 id="partners-heading"
-                                    className="text-xl font-medium md:text-2xl lg:text-4xl md:leading-tight text-white">
-                                    Trusted By Leading Organizations
-                                </h2>
-                                <p className="text-white/70">
-                                    Partnering with businesses committed to sustainability
-                                </p>
-                            </div>
-                            <div
-                                className="mt-5 lg:mt-8 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-4">
-                                <Link
-                                    className="w-full sm:w-auto whitespace-nowrap py-3 px-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-primary text-white hover:bg-primary/40 focus:outline-hidden focus:bg-[#274034] disabled:opacity-50 disabled:pointer-events-none"
-                                    to="/about"
-                                    aria-label="Learn more about our partner organizations"
-                                >
-                                    Learn More
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+                  <div className="flex flex-col items-center gap-2 text-white">
+                    <img src={card.icon} alt="" aria-hidden="true" width={36} height={36} className="h-9 w-9 object-contain" loading="lazy" />
+                    <h2 className="text-xl font-bold">{card.value}</h2>
+                    <p className="text-sm text-white/80">{card.label}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            <Footer/>
-        </>
-    );
+        <section className="bg-[#061512] px-4 py-12 sm:px-6 sm:py-16 lg:px-8" aria-labelledby="why-matters-heading">
+          <div className="mx-auto max-w-6xl space-y-10">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-medium tracking-wide text-white">
+                <img src="/img/sparkle-white.avif" alt="" aria-hidden="true" width={20} height={20} className="h-5 w-5" loading="lazy" />
+                Why It Matters
+              </span>
+              <h2 id="why-matters-heading" className="mt-4 text-xl font-medium text-white/80 sm:text-2xl">
+                Every device we recycle contributes to a cleaner environment.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {[
+                {
+                  img: "/img/impact-1.avif",
+                  title: "Prevent Toxic Pollution",
+                  desc: "Electronic waste contains hazardous substances that pose risks to people and ecosystems when handled informally.",
+                },
+                {
+                  img: "/img/impact-2.avif",
+                  title: "Conserve Natural Resources",
+                  desc: "Recycling recovers materials such as metals and glass, reducing the need for virgin extraction.",
+                },
+                {
+                  img: "/img/impact-3.avif",
+                  title: "Reduce Carbon Footprint",
+                  desc: "Extending the lifecycle of devices and recovering materials avoids emissions from new production.",
+                },
+              ].map((item) => (
+                <article key={item.title} className="space-y-4">
+                  <figure className="mx-auto aspect-square max-w-sm overflow-hidden rounded-2xl">
+                    <img src={item.img} alt={item.title} className="h-full w-full object-cover" loading="lazy" width={400} height={400} decoding="async" />
+                  </figure>
+                  <div className="text-center">
+                    <h3 className="text-sm font-semibold text-white sm:text-base">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-white/70">{item.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0D3924] px-4 py-12 sm:px-6 sm:py-16 lg:px-8" aria-labelledby="partners-heading">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 id="partners-heading" className="text-xl font-medium text-white sm:text-2xl lg:text-3xl">
+              Trusted by organisations that take compliance seriously
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-white/70">Partnering with organisations committed to responsibility.</p>
+            <div className="mt-8">
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a3d26]"
+              >
+                Learn more about us
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Impact;

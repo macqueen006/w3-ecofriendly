@@ -1,111 +1,105 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 export default function HeroSection() {
-    const stats = [
-        {
-            value: "3,242.7+",
-            label: "Tons Recovered",
-            ariaLabel: "Over 3,242 tons of electronic waste recovered"
-        },
-        {
-            value: "1,000+",
-            label: "Emissions Avoided",
-            ariaLabel: "Over 1,000 tons of CO2 emissions avoided"
-        },
-        {
-            value: "3,242.7+",
-            label: "Tons Diverted for Reuse",
-            ariaLabel: "Over 3,242 tons diverted for reuse"
-        }
-    ];
+  const stats = [
+    {
+      value: "3,242.7+",
+      label: "Tons Recovered",
+      ariaLabel: "Over 3,242 tons of electronic waste recovered",
+    },
+    {
+      value: "1,000+",
+      label: "Emissions Avoided",
+      ariaLabel: "Over 1,000 tons of CO2 emissions avoided",
+    },
+    {
+      value: "3,242.7+",
+      label: "Tons Diverted for Reuse",
+      ariaLabel: "Over 3,242 tons diverted for reuse",
+    },
+  ];
 
-    return (
-        <section
-            className="relative bg-primary-foreground"
-            aria-labelledby="hero-heading"
+  return (
+    <section className="relative bg-zinc-900" aria-labelledby="hero-heading">
+      <img
+        src="/img/hero-1920w.avif"
+        srcSet="/img/hero-640w.avif 640w, /img/hero-1280w.avif 1280w, /img/hero-1920w.avif 1920w, /img/hero.avif 2880w"
+        sizes="100vw"
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1207}
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto max-w-4xl space-y-6 px-4 pt-12 sm:pt-16 md:pt-20">
+        <h1
+          id="hero-heading"
+          className="text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl"
         >
-            <picture aria-hidden="true">
-                <source srcSet="/img/hero.avif" type="image/avif" />
-                <img
-                    src="/img/hero.avif"
-                    alt=""
-                    width={1440}
-                    height={900}
-                    fetchPriority="high"
-                    loading="eager"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                    style={{ zIndex: 0 }}
-                />
-            </picture>
-            <div className="relative z-10 max-w-4xl mx-auto px-4 xl:px-0 pt-24 sm:pt-32 md:pt-40 space-y-6">
-                {/* Main Heading - H1 for SEO */}
-                <h1
-                    id="hero-heading"
-                    className="font-semibold text-white text-center text-2xl sm:text-3xl md:text-4xl"
-                >
-                    Advanced Technology for <br aria-hidden="true" />
-                    Responsible E-waste Management
-                </h1>
+          Secure collection. Certified recycling.
+          <br aria-hidden="true" />
+          Responsible e-waste management.
+        </h1>
 
-                {/* Supporting Description */}
-                <p className="text-white text-base sm:text-lg text-center max-w-2xl mx-auto">
-                    W3 Eco-Friendly Ltd delivers secure, auditable, and regulator-aligned solutions for electronic waste collection, downstream management, and certified recycling across Nigeria.
+        <p className="mx-auto max-w-2xl text-center text-sm leading-6 text-white/80 sm:text-base">
+          W3 Eco Friendly Ltd delivers compliant, documented solutions for
+          collection, data destruction and certified recycling - serving
+          enterprises, government and institutions across Nigeria.
+        </p>
+
+        <div className="mx-auto flex max-w-2xl flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+          <Link
+            to="/contact-us"
+            className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a3d26] focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto"
+            aria-label="Request an e-waste pickup"
+          >
+            Request Pickup
+          </Link>
+          <Link
+            to="/contact-us"
+            className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto"
+            aria-label="Contact an expert"
+          >
+            Contact an Expert
+          </Link>
+        </div>
+      </div>
+
+      <div className="relative z-10 mt-10 px-4 pb-6 sm:pb-8">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-white/10 p-4 backdrop-blur sm:p-6">
+          <div
+            className="grid grid-cols-1 items-center gap-y-8 gap-x-12 sm:grid-cols-3"
+            role="list"
+            aria-label="Environmental impact statistics"
+          >
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                role="listitem"
+                aria-label={stat.ariaLabel}
+                className={`relative text-center ${index !== 0 ? "border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-12" : ""}`}
+              >
+                <p className="text-lg font-semibold text-white sm:text-2xl" aria-hidden="true">
+                  {stat.value}
                 </p>
-
-                {/* Call-to-Action Buttons */}
-                <div className="text-white text-lg text-center max-w-2xl mx-auto flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
-                    <Link
-                        to="/contact-us"
-                        className="w-full sm:w-auto px-6 py-3 bg-[#064E3B] text-white text-base font-medium rounded-lg hover:bg-[#053527] transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
-                        aria-label="Contact our e-waste management experts"
-                    >
-                        Contact Expert
-                    </Link>
-                    <Link
-                        to="/contact-us"
-                        className="w-full sm:w-auto px-6 py-3 bg-white text-[#064E3B] text-base font-medium rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#064E3B]/50"
-                        aria-label="Request e-waste pickup service"
-                    >
-                        Request Pickup
-                    </Link>
-                </div>
-            </div>
-
-            {/* Statistics Section */}
-            <div className="px-4 xl:px-0 bg-linear-to-bl from-navy-blue to-neutral-950 mt-30">
-                <div className="mx-auto max-w-5xl">
-                    <div className="p-4 rounded-xl">
-                        <div
-                            className="grid grid-cols-1 sm:grid-cols-3 items-center gap-y-10 gap-x-12"
-                            role="list"
-                            aria-label="Environmental impact statistics"
-                        >
-                            {stats.map((stat, index) => (
-                                <div
-                                    key={index}
-                                    role="listitem"
-                                    aria-label={stat.ariaLabel}
-                                    className={`relative text-center ${
-                                        index === 0
-                                            ? ''
-                                            : 'before:absolute before:-top-full sm:before:top-1/2 before:start-1/2 sm:before:-start-6 before:w-px before:h-20 before:bg-light-blue before:rotate-[60deg] sm:before:rotate-12 before:transform sm:before:-translate-y-1/2 before:-translate-x-1/2 sm:before:-translate-x-0 before:mt-3.5 sm:before:mt-0'
-                                    }`}
-                                >
-                                    <div>
-                                        <h3 className="text-lg sm:text-2xl font-medium text-white">
-                                            {stat.value}
-                                        </h3>
-                                        <p className="mt-1 text-sm sm:text-base text-neutral-400">
-                                            {stat.label}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+                <p className="mt-1 text-sm text-white/60">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-xs leading-5 text-white/50">
+            Illustrative throughput indicators - methodology and period to be
+            verified before publication as a claim.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
