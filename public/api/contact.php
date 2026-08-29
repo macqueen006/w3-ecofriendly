@@ -10,6 +10,10 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
 header('Referrer-Policy: strict-origin-when-cross-origin');
+header('Permissions-Policy: geolocation=(), microphone=(), camera=()');
+if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+    header('Strict-Transport-Security: max-age=63072000; includeSubDomains; preload');
+}
 
 // CORS - allow same origin + configured ALLOWED_ORIGIN
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -79,10 +83,16 @@ function field_str(array $arr, string $key): string
     return is_string($v) ? trim($v) : '';
 }
 
-$name = field_str($data, 'name');
-$organisation = field_str($data, 'organisation');
-$email = field_str($data, 'email');
-$phone = field_str($data, 'phone');
+function sanitize_header_value(string $v): string
+{
+    // Prevent email header injection - strip CR/LF
+    return str_replace(["\r", "\n"], '', trim($v));
+}
+
+$name = sanitize_header_value(field_str($data, 'name'));
+$organisation = sanitize_header_value(field_str($data, 'organisation'));
+$email = sanitize_header_value(field_str($data, 'email'));
+$phone = sanitize_header_value(field_str($data, 'phone'));
 $enquiryType = field_str($data, 'enquiryType');
 $message = field_str($data, 'message');
 
@@ -202,10 +212,10 @@ $textBody = "New enquiry from w3eco-friendly.com\n"
     . "Email: {$email}\n"
     . "Phone: " . ($phone !== '' ? $phone : '-') . "\n"
     . "Type: {$typeLabel} ({$enquiryType})\n"
-    . "IP: {$ip}\n"
+    . "IP: " . substr($ip, 0, 45) . "\n"
     . "Time: " . gmdate('Y-m-d H:i:s') . " UTC\n"
     . "----------------------------------------\n"
-    . "Message:\n{$message}\n"
+    . "Message:\n" . substr($message, 0, 5000) . "\n"
     . "----------------------------------------\n"
     . "Site: {$siteUrl}\n";
 

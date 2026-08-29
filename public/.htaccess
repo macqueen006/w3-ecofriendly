@@ -1,6 +1,26 @@
+# Block direct access to sensitive files
+<FilesMatch "(^\.env|^\.git|composer\.lock|package\.lock)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
+</IfModule>
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Force HTTPS (if not behind Cloudflare proxy)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+  # Block .env and dotfiles via rewrite as fallback if FilesMatch not enforced
+  RewriteRule "(^|/)\.env" - [F,L]
+  RewriteRule "(^|/)\.git" - [F,L]
 
   # Permanent redirects for deleted pages (invisible - no navigation link)
   RewriteRule ^w3-b2/?$ / [R=301,L]
