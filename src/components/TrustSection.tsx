@@ -50,15 +50,15 @@ const TrustSection = () => {
 
           <div className="relative flex-1 overflow-hidden rounded-2xl">
             <img
-              src="/img/generated-5-480w.avif"
-              srcSet="/img/generated-5-480w.avif 480w, /img/generated-5-640w.avif 640w, /img/generated-5.avif 974w"
+              src="/img/w3eco-dashboard-640w.avif"
+              srcSet="/img/w3eco-dashboard-480w.avif 480w, /img/w3eco-dashboard-640w.avif 640w, /img/w3eco-dashboard.avif 1280w"
               sizes="(max-width: 768px) 100vw, 480px"
               alt=""
               aria-hidden="true"
               loading="lazy"
               decoding="async"
-              width={480}
-              height={542}
+              width={640}
+              height={427}
               className="h-full min-h-[360px] w-full object-cover"
             />
           </div>
