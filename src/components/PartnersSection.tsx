@@ -1,14 +1,38 @@
 export default function PartnersSection() {
   const partners = [
-    { name: "LASEPA", logo: "/img/lasepa.avif", alt: "LASEPA - Lagos State Environmental Protection Agency" },
-    { name: "EPRON", logo: "/img/epron.avif", alt: "EPRON - Extended Producer Responsibility Organisation Nigeria" },
-    { name: "Federal Ministry of Environment", short: "FMEnv", logo: "/img/environment.avif", alt: "Federal Ministry of Environment, Nigeria" },
-    { name: "NESREA", logo: "/img/neserea.avif", alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency" },
-    { name: "LAWMA", logo: "/img/lawma.avif", alt: "LAWMA - Lagos Waste Management Authority" },
+    {
+      name: "LASEPA",
+      logo: "/img/lasepa.avif",
+      alt: "LASEPA - Lagos State Environmental Protection Agency",
+    },
+    {
+      name: "EPRON",
+      logo: "/img/epron.avif",
+      alt: "EPRON - Extended Producer Responsibility Organisation Nigeria",
+    },
+    {
+      name: "Federal Ministry of Environment",
+      short: "FMEnv",
+      logo: "/img/environment.avif",
+      alt: "Federal Ministry of Environment, Nigeria",
+    },
+    {
+      name: "NESREA",
+      logo: "/img/neserea.avif",
+      alt: "NESREA - National Environmental Standards and Regulations Enforcement Agency",
+    },
+    {
+      name: "LAWMA",
+      logo: "/img/lawma.avif",
+      alt: "LAWMA - Lagos Waste Management Authority",
+    },
   ];
 
   return (
-    <section className="border-y border-zinc-100 bg-white" aria-labelledby="partners-heading">
+    <section
+      className="border-y border-zinc-100 bg-white"
+      aria-labelledby="partners-heading"
+    >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         {/* Eyebrow + heading */}
         <div className="mx-auto max-w-2xl text-center">
@@ -22,7 +46,8 @@ export default function PartnersSection() {
             Recognised within Nigeria’s regulatory landscape
           </h2>
           <p className="mt-3 text-sm leading-6 text-zinc-600">
-            We operate in line with applicable mandates and collaborate where required for compliant e-waste handling.
+            We operate in line with applicable mandates and collaborate where
+            required for compliant e-waste handling.
           </p>
         </div>
 
@@ -42,7 +67,11 @@ export default function PartnersSection() {
               >
                 <img
                   src={isLawma ? "/img/lawma-166w.avif" : partner.logo}
-                  srcSet={isLawma ? "/img/lawma-166w.avif 166w, /img/lawma-332w.avif 332w" : undefined}
+                  srcSet={
+                    isLawma
+                      ? "/img/lawma-166w.avif 166w, /img/lawma-332w.avif 332w"
+                      : undefined
+                  }
                   sizes={isLawma ? "96px" : undefined}
                   alt={partner.alt}
                   width={96}
@@ -51,19 +80,18 @@ export default function PartnersSection() {
                   decoding="async"
                   className="h-8 w-auto object-contain opacity-90 transition-opacity group-hover:opacity-100"
                 />
-              <p className="mt-3 text-xs font-medium tracking-wide text-zinc-700">
-                {"short" in partner && partner.short ? partner.short : partner.name}
-              </p>
-              {"short" in partner && partner.short ? <span className="sr-only">{partner.name}</span> : null}
-            </div>
+                <p className="mt-3 text-xs font-medium tracking-wide text-zinc-700">
+                  {"short" in partner && partner.short
+                    ? partner.short
+                    : partner.name}
+                </p>
+                {"short" in partner && partner.short ? (
+                  <span className="sr-only">{partner.name}</span>
+                ) : null}
+              </div>
             );
           })}
         </div>
-
-        <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-5 text-zinc-500">
-          Logos are shown to indicate institutional engagement or oversight collaboration under applicable mandates, not to imply
-          endorsement or certification beyond stated operations.
-        </p>
       </div>
     </section>
   );
