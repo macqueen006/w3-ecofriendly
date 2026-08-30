@@ -87,17 +87,13 @@ export default function HeroSection() {
                 aria-label={stat.ariaLabel}
                 className={`relative text-center ${index !== 0 ? "border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-12" : ""}`}
               >
-                <p className="text-lg font-semibold text-white sm:text-2xl" aria-hidden="true">
+                <h3 className="text-lg font-semibold text-white sm:text-2xl">
                   {stat.value}
-                </p>
+                </h3>
                 <p className="mt-1 text-sm text-white/60">{stat.label}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs leading-5 text-white/50">
-            Illustrative throughput indicators - methodology and period to be
-            verified before publication as a claim.
-          </p>
         </div>
       </div>
     </section>
